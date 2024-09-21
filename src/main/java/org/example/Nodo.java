@@ -1,20 +1,32 @@
 package org.example;
 
 public class Nodo {
+
+    private Nodo padre;
     private String estado;
     private String operador;
     private int profundidad;
     private int indice;
 
 
+
     private int costo;
 
-    public Nodo(String estado, String operador, int profundidad, int costo, int indice) {
+    public Nodo(Nodo padre,String estado, String operador, int profundidad, int costo, int indice) {
+        this.padre = padre;
         this.estado = estado;
         this.operador = operador;
         this.profundidad = profundidad;
         this.costo = costo;
         this.indice = indice;
+    }
+
+    public Nodo getPadre() {
+        return padre;
+    }
+
+    public void setPadre(Nodo padre) {
+        this.padre = padre;
     }
 
     public int getIndice() {
@@ -63,8 +75,8 @@ public class Nodo {
                 "estado='" + estado + '\'' +
                 ", operador='" + operador + '\'' +
                 ", profundidad=" + profundidad +
-                ", indice=" + indice +
                 ", costo=" + costo +
+                ", padre=" + padre +
                 '}';
     }
 }
