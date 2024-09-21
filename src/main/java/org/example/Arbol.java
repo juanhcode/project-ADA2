@@ -18,11 +18,11 @@ public class Arbol {
     }
 
     public void busquedaAmplitud() {
-        Queue cola = new LinkedList<Nodo>();
+        Queue<Nodo> cola = new LinkedList<>();
         cola.add(raiz);
         int contador = 0;
         while (!cola.isEmpty() && contador < 6) {
-            Nodo actual = (Nodo) cola.poll();
+            Nodo actual = cola.poll();
             System.out.println(actual);
             String estado = actual.getEstado();
             if(estado.equals(destino)){
@@ -30,7 +30,7 @@ public class Arbol {
                 return;
             }
             for (Nodo hijo : generarHijos(actual)) {
-                    cola.add(hijo);
+                cola.add(hijo);
             }
             contador++;
         }
@@ -49,26 +49,27 @@ public class Arbol {
             Nodo hijoAvanzar = new Nodo(actual.getEstado(), "Advance", actual.getProfundidad()+1, 'a', nuevoIndice);
             hijos.add(hijoAvanzar);
         }
-        //delete
-        if(actual.getIndice() < estado.length()){
-            Nodo hijoDelete = new Nodo(operations.delete(indice), "Delete", actual.getProfundidad()+1, 'd', indice+1);
+        // delete
+        if (actual.getIndice() < estado.length()) {
+            Nodo hijoDelete = new Nodo(operations.delete(indice), "Delete", actual.getProfundidad() + 1, 'd', indice + 1);
             hijos.add(hijoDelete);
         }
-        if(actual.getIndice() < estado.length()){
+
+        // replace
+        if (actual.getIndice() < estado.length()) {
             String nuevaCadena = operations.replace(actual.getIndice(), destino.charAt(actual.getIndice()));
-            Nodo hijoReplace = new Nodo(nuevaCadena, "Replace", actual.getProfundidad()+1, 'r', indice+1);
+            Nodo hijoReplace = new Nodo(nuevaCadena, "Replace", actual.getProfundidad() + 1, 'r', indice + 1);
             hijos.add(hijoReplace);
         }
-
+        // insert
         String nuevoEstadoInsertar = operations.insert(actual.getIndice(), destino.charAt((actual.getIndice())));
-        Nodo hijoInsert = new Nodo(nuevoEstadoInsertar, "Insert", actual.getProfundidad()+1, 'i', indice);
+        Nodo hijoInsert = new Nodo(nuevoEstadoInsertar, "Insert", actual.getProfundidad() + 1, 'i', indice);
         hijos.add(hijoInsert);
 
-        //Kill
+        // kill
         String nuevoEstadoKill = operations.kill(actual.getIndice());
-        Nodo hijoKill = new Nodo(nuevoEstadoKill, "Kill", actual.getProfundidad()+1, 'k', indice);
+        Nodo hijoKill = new Nodo(nuevoEstadoKill, "Kill", actual.getProfundidad() + 1, 'k', indice);
         hijos.add(hijoKill);
-
         return hijos;
 
     }

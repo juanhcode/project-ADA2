@@ -5,6 +5,8 @@ public class Nodo {
     private String operador;
     private int profundidad;
     private int indice;
+
+
     private int costo;
 
     public Nodo(String estado, String operador, int profundidad, int costo, int indice) {
