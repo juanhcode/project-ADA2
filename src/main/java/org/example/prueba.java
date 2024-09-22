@@ -46,7 +46,6 @@ public class prueba {
             }
             expandidos++;
         }
-
         return "No se encontró solución";
     }
 
