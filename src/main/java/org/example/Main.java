@@ -2,8 +2,8 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        String inicial = "ho";
-        String destino = "oh";
+        String inicial = "algorithm";
+        String destino = "altruistic";
         Arbol arbol = new Arbol(inicial, destino);
         arbol.busquedaAmplitud();
     }
