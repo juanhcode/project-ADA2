@@ -18,11 +18,11 @@ public class Main {
         // Oferentes
         int n = 2;
 
-        System.out.println(combinaciones(tripletaList, A, B, n));
+        System.out.println(combinaciones(tripletaList, A));
 
     }
 
-    public static int combinaciones(List<Tripleta> tripletaList, int A, int B, int n) {
+    public static int combinaciones(List<Tripleta> tripletaList, int A) {
         int maxGanancia = 0;
         int size = tripletaList.size();
         List<int[]> stack = new ArrayList<>();
@@ -34,15 +34,15 @@ public class Main {
             int acciones = current[1];
             int ganancia = current[2];
 
-            for (int i = 0; i < stack.size(); i++) {
-                try {
-                    Thread.sleep(1);
-                    System.out.println(stack.get(i)[0] + " " + stack.get(i)[1] + " " + stack.get(i)[2]);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-
-            }
+//            for (int i = 0; i < stack.size(); i++) {
+//                try {
+//                    Thread.sleep(1);
+//                    System.out.println(stack.get(i)[0] + " " + stack.get(i)[1] + " " + stack.get(i)[2]);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//
+//            }
 
             if (index == size) {
                 if (acciones <= A) {
