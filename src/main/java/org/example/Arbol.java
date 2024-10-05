@@ -2,7 +2,7 @@ package org.example;
 
 import java.util.LinkedList;
 import java.util.Queue;
-
+// probando rama
 public class Arbol {
     private static Nodo raiz;
     private String inicial;
