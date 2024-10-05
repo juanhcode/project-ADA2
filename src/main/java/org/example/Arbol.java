@@ -20,30 +20,60 @@ public class Arbol {
         Queue<Nodo> cola = new LinkedList<>();
         cola.add(raiz);
 
+        int nodosEnNivelActual = 1;  // Nodos a expandir en el nivel actual
+        int nodosEnProximoNivel = 0; // Nodos en el siguiente nivel
+        Nodo nodoMeta = null;
+        int totalNodosGenerados = 0; // Contador de nodos generados
+
         while (!cola.isEmpty()) {
             Nodo actual = cola.poll();
+            nodosEnNivelActual--;
+
             System.out.println(actual);
 
-            if (actual.getEstado().equals(destino)) {
-                System.out.println("Solución encontrada con costo: " + actual.getCosto());
-                System.out.println("Nodo que encontró la solución: " + actual);
-                imprimirRuta(actual);
-                System.out.println("Nodos repetidos encontrados: " + nodosRepetidos);
-                return;
+            if(inicial.equals(destino)){
+                System.out.println("La cadena inicial es igual a la cadena destino");
+                break;
             }
 
+            // Si encontramos el nodo meta, guardamos la referencia pero continuamos expandiendo todos los nodos.
+            if (actual.getEstado().equals(destino)) {
+                nodoMeta = actual;
+            }
+
+            // Generar hijos y añadirlos a la cola
             for (Nodo hijo : generarHijos(actual)) {
+                totalNodosGenerados++; // Incrementar contador de nodos generados
+
+                // Verificar si no es un nodo repetido
                 if (actual.getPadre() == null || !hijo.getEstado().equals(actual.getPadre().getEstado())) {
                     cola.add(hijo);
+                    nodosEnProximoNivel++; // Incrementar contador de nodos en el próximo nivel
                 } else {
                     nodosRepetidos++;
                 }
             }
+
+            // Cuando terminamos de expandir todos los nodos del nivel actual
+            if (nodosEnNivelActual == 0) {
+                nodosEnNivelActual = nodosEnProximoNivel; // Pasamos al siguiente nivel
+                nodosEnProximoNivel = 0;
+            }
         }
 
-        System.out.println("No se encontró solución");
+        // Verificar si encontramos la solución después de expandir todos los nodos
+        if (nodoMeta != null) {
+            System.out.println("Solución encontrada con costo: " + nodoMeta.getCosto());
+            System.out.println("Nodo que encontró la solución: " + nodoMeta);
+            imprimirRuta(nodoMeta);
+        } else {
+            System.out.println("No se encontró solución");
+        }
+
+        System.out.println("Nodos generados en total: " + totalNodosGenerados); // Imprimir total de nodos generados
         System.out.println("Nodos repetidos encontrados: " + nodosRepetidos);
     }
+
 
     private LinkedList<Nodo> generarHijos(Nodo actual) {
         LinkedList<Nodo> hijos = new LinkedList<>();
