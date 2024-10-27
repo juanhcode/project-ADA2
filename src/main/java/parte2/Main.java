@@ -18,11 +18,11 @@ public class Main {
         // Oferentes
         int n = 2;
 
-        System.out.println(combinaciones(tripletaList, A, B, n));
+        System.out.println(combinaciones(tripletaList, A));
 
     }
 
-    public static int combinaciones(List<Tripleta> tripletaList, int A, int B, int n) {
+    public static int combinaciones(List<Tripleta> tripletaList, int A) {
         int maxGanancia = 0;
         int size = tripletaList.size();
         List<int[]> stack = new ArrayList<>();
