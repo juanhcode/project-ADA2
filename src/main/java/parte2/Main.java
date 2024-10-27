@@ -34,15 +34,15 @@ public class Main {
             int acciones = current[1];
             int ganancia = current[2];
 
-            for (int i = 0; i < stack.size(); i++) {
-                try {
-                    Thread.sleep(1);
-                    System.out.println(stack.get(i)[0] + " " + stack.get(i)[1] + " " + stack.get(i)[2]);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-
-            }
+//            for (int i = 0; i < stack.size(); i++) {
+//                try {
+//                    Thread.sleep(1);
+//                    System.out.println(stack.get(i)[0] + " " + stack.get(i)[1] + " " + stack.get(i)[2]);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//
+//            }
 
             if (index == size) {
                 if (acciones <= A) {
