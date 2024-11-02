@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" spacing="20.0" style="-fx-background-color: black;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/22" fx:controller="com.example.pruebita.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="LA TERMINAL INTELIGENTE" textAlignment="CENTER">
+      <font>
+         <Font name="Consolas Italic" size="24.0" />
+      </font>
+      <fill>
+         <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+            <stops>
+               <Stop>
+                  <color>
+                     <Color red="0.07072368264198303" green="0.20274123549461365" blue="0.5657894611358643" />
+                  </color>
+               </Stop>
+               <Stop offset="1.0">
+                  <color>
+                     <Color red="1.0" green="1.0" blue="1.0" />
+                  </color>
+               </Stop>
+            </stops>
+         </RadialGradient>
+      </fill>
+   </Text>
+
+
+    <!-- Campo de texto para cadena inicial -->
+    <TextField fx:id="campoCadenaInicial" promptText="Cadena inicial">
+      <font>
+         <Font size="13.0" />
+      </font></TextField>
+
+    <!-- Campo de texto para cadena final -->
+    <TextField fx:id="campoCadenaFinal" promptText="Cadena final">
+      <font>
+         <Font size="13.0" />
+      </font></TextField>
+
+    <!-- Botones -->
+    <Button fx:id="botonEjecutar" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" text="Ejecutar">
+      <font>
+         <Font name="System Italic" size="13.0" />
+      </font></Button>
+    <Button fx:id="botonLimpiar"  style="-fx-background-color: red; -fx-text-fill: white;" text="Limpiar" textFill="WHITE">
+      <font>
+         <Font name="System Italic" size="13.0" />
+      </font></Button>
+
+    <!-- Área de procesos con ScrollPane -->
+    <ScrollPane fx:id="scrollPaneProcesos" fitToHeight="true" fitToWidth="true">
+        <TextArea fx:id="areaProcesos" editable="false" promptText="Lista de Procesos" wrapText="true" />
+    </ScrollPane>
+
+    <!-- Área de resultados -->
+    <TextArea fx:id="areaResultados" editable="false" promptText="Resultados" />
+</VBox>
