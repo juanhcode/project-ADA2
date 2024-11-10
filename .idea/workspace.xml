@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa822252-410a-4b46-adce-3364299eaf13" name="Changes" comment="Interfaz subasta">
-      <change afterPath="$PROJECT_DIR$/src/main/java/parte2/pruebita -punto 2" afterDir="false" />
+    <list default="true" id="aa822252-410a-4b46-adce-3364299eaf13" name="Changes" comment="Actualizar interfaz 1">
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/parte2/pruebita -punto 2/src/main/java/com/example/pruebita/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/parte2/pruebita -punto 2/src/main/java/com/example/pruebita/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/parte2/pruebita -punto 2/src/main/java/com/example/pruebita/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/parte2/pruebita -punto 2/src/main/java/com/example/pruebita/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/parte2/pruebita -punto 2/src/main/resources/com/example/pruebita/hello-view.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +20,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/pruebita" />
   </component>
   <component name="GitHubPullRequestSearchHistory"><![CDATA[{
   "lastFilter": {
@@ -62,7 +57,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "interfaz",
+    "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/57323/IdeaProjects/pruebita -punto 2",
     "node.js.detected.package.eslint": "true",
@@ -164,7 +159,7 @@
       <workItem from="1727317285164" duration="1428000" />
       <workItem from="1727409509372" duration="3108000" />
       <workItem from="1727493668580" duration="366000" />
-      <workItem from="1731251621527" duration="3295000" />
+      <workItem from="1731251621527" duration="3681000" />
     </task>
     <task id="LOCAL-00001" summary="example">
       <option name="closed" value="true" />
@@ -222,7 +217,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731255767817</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Actualizar interfaz 1">
+      <option name="closed" value="true" />
+      <created>1731256022882</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1731256022882</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,6 +249,7 @@
     <MESSAGE value="Revertir cambios en carpeta java" />
     <MESSAGE value="agregar validación" />
     <MESSAGE value="Interfaz subasta" />
-    <option name="LAST_COMMIT_MESSAGE" value="Interfaz subasta" />
+    <MESSAGE value="Actualizar interfaz 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Actualizar interfaz 1" />
   </component>
 </project>
