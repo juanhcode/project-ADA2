@@ -7,7 +7,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-
+// punto 1
 public class HelloApplication extends Application {
 
     @Override
