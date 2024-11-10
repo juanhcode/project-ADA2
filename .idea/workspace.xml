@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa822252-410a-4b46-adce-3364299eaf13" name="Changes" comment=" interfaz 1">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="aa822252-410a-4b46-adce-3364299eaf13" name="Changes" comment="Feat: Cambios finales" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -159,7 +157,7 @@
       <workItem from="1727317285164" duration="1428000" />
       <workItem from="1727409509372" duration="3108000" />
       <workItem from="1727493668580" duration="366000" />
-      <workItem from="1731251621527" duration="4315000" />
+      <workItem from="1731251621527" duration="4472000" />
     </task>
     <task id="LOCAL-00001" summary="example">
       <option name="closed" value="true" />
@@ -233,7 +231,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731256213557</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Feat: Cambios finales">
+      <option name="closed" value="true" />
+      <created>1731256900577</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1731256900577</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,6 +265,7 @@
     <MESSAGE value="Interfaz subasta" />
     <MESSAGE value="Actualizar interfaz 1" />
     <MESSAGE value=" interfaz 1" />
-    <option name="LAST_COMMIT_MESSAGE" value=" interfaz 1" />
+    <MESSAGE value="Feat: Cambios finales" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat: Cambios finales" />
   </component>
 </project>
