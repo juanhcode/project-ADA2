@@ -1,4 +1,5 @@
 package com.example.pruebita;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,7 +12,6 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import java.io.IOException;
 
-
 public class HelloApplication extends Application {
     public void start(Stage primaryStage) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
@@ -21,15 +21,14 @@ public class HelloApplication extends Application {
             throw new RuntimeException(e);
         }
 
-
-        //Crear los campos de texto
+        // Crear los campos de texto
         TextField campoCadenaInicial = new TextField();
         campoCadenaInicial.setPromptText("Cadena inicial");
 
         TextField campoCadenaFinal = new TextField();
         campoCadenaFinal.setPromptText("Cadena final");
 
-        //Crear el botón de ejecutar
+        // Crear el botón de ejecutar
         Button botonEjecutar = new Button("Ejecutar");
         Button botonLimpiar = new Button("Limpiar");
 
@@ -50,8 +49,14 @@ public class HelloApplication extends Application {
 
         // Manejar el evento del botón "Ejecutar"
         botonEjecutar.setOnAction(event -> {
-            String cadenaInicial = campoCadenaInicial.getText();
-            String cadenaFinal = campoCadenaFinal.getText();
+            String cadenaInicial = campoCadenaInicial.getText().trim();
+            String cadenaFinal = campoCadenaFinal.getText().trim();
+
+            // Verificar que los campos no estén vacíos
+            if (cadenaInicial.isEmpty() || cadenaFinal.isEmpty()) {
+                areaResultados.setText("Por favor, ingresa ambas cadenas.");
+                return;
+            }
 
             // Limpiar el área de procesos antes de cada ejecución
             areaProcesos.clear();
@@ -63,27 +68,31 @@ public class HelloApplication extends Application {
             areaProcesos.appendText("insert\n");
             areaProcesos.appendText("kill\n");
 
-
             // Resultado final
             areaResultados.setText("Resultados del proceso entre " + cadenaInicial + " y " + cadenaFinal);
         });
-        botonLimpiar.setOnAction(event -> {
 
-            campoCadenaInicial.setText("");
-            campoCadenaFinal.setText("");
-            areaProcesos.setText("");
-            areaResultados.setText("");
+        // Manejar el evento del botón "Limpiar"
+        botonLimpiar.setOnAction(event -> {
+            campoCadenaInicial.clear();
+            campoCadenaFinal.clear();
+            areaProcesos.clear();
+            areaResultados.clear();
+            campoCadenaInicial.requestFocus();  // Colocar el foco en el campo inicial
         });
 
         // Colocar todos los elementos en un VBox (layout vertical)
         VBox layout = new VBox(10);
-        layout.getChildren().addAll(campoCadenaInicial, campoCadenaFinal, botonEjecutar, botonLimpiar,  scrollPaneProcesos, areaResultados);
+        layout.getChildren().addAll(campoCadenaInicial, campoCadenaFinal, botonEjecutar, botonLimpiar, scrollPaneProcesos, areaResultados);
 
         // Crear y configurar la escena
         Scene scene = new Scene(layout, 400, 300);
         primaryStage.setScene(scene);
         primaryStage.setTitle("LA TERMINAL INTELIGENTE");
         primaryStage.show();
+
+        // Colocar el foco en el campo inicial al abrir la ventana
+        campoCadenaInicial.requestFocus();
     }
 
     public static void main(String[] args) {
