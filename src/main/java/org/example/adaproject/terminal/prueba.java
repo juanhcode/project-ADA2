@@ -1,4 +1,4 @@
-package org.example;
+package org.example.adaproject.terminal;
 
 import java.util.*;
 

@@ -1,4 +1,4 @@
-package org.example;
+package org.example.adaproject.terminal;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -29,7 +29,7 @@ public class Arbol {
             Nodo actual = cola.poll();
             nodosEnNivelActual--;
 
-            //System.out.println(actual);
+            System.out.println(actual);
 
             if(inicial.equals(destino)){
                 System.out.println("La cadena inicial es igual a la cadena destino");

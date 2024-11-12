@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa822252-410a-4b46-adce-3364299eaf13" name="Changes" comment="example">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Arbol.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Nodo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Operations.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TransformacionDinamica.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TransformadorVoraz.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/prueba.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/parte2/Dinamica.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/parte2/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/parte2/Tripleta.java" beforeDir="false" />
-    </list>
+    <list default="true" id="aa822252-410a-4b46-adce-3364299eaf13" name="Changes" comment="Feat: example" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,12 +54,12 @@
     "Application.Main.executor": "Run",
     "Application.TransformacionDinamica.executor": "Run",
     "Application.TransformadorVoraz.executor": "Run",
+    "Application.org.example.TransformacionDinamica.executor": "Run",
     "Application.org.example.TransformadorVoraz.executor": "Run",
     "Application.parte2.Main.executor": "Run",
     "Application.prueba.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "devhoyos",
@@ -231,7 +220,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730068517072</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Feat: example">
+      <option name="closed" value="true" />
+      <created>1731382033605</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1731382033605</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,7 +247,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="example" />
-    <option name="LAST_COMMIT_MESSAGE" value="example" />
+    <MESSAGE value="Feat: example" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat: example" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

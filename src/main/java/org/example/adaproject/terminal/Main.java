@@ -1,4 +1,4 @@
-package org.example;
+package org.example.adaproject.terminal;
 
 public class Main {
     public static void main(String[] args) {
