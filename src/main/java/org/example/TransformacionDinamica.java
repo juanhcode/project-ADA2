@@ -3,15 +3,15 @@ package org.example;
 public class TransformacionDinamica {
 
     public static void main(String[] args) {
-        String source = "francesa";
-        String target = "ancestro";
+        String source = "algorithm";
+        String target = "altruistic";
 
         // Definición de costos para cada operación
         int costoAvanzar = 1;  // Costo de avanzar
         int costoDelete = 2;   // Costo de borrar
         int costoReplace = 3;  // Costo de reemplazar
-        int costoInsert = 4;   // Costo de insertar
-        int costoKill = 5;     // Costo de eliminar hasta el final
+        int costoInsert = 2;   // Costo de insertar
+        int costoKill = 1;     // Costo de eliminar hasta el final
 
         // Inicializar el nodo raíz con la cadena de origen
         Nodo raiz = new Nodo(null, source, "", 0, 0, 0);

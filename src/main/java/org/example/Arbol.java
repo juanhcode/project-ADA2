@@ -29,7 +29,7 @@ public class Arbol {
             Nodo actual = cola.poll();
             nodosEnNivelActual--;
 
-            System.out.println(actual);
+            //System.out.println(actual);
 
             if(inicial.equals(destino)){
                 System.out.println("La cadena inicial es igual a la cadena destino");

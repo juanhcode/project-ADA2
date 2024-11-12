@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TransformadorVoraz {
-
     // Costos de las operaciones
-    private static final int COSTO_DELETE = 1;   // Costo de 'delete'
-    private static final int COSTO_REPLACE = 3;  // Costo de 'replace'
-    private static final int COSTO_INSERT = 1;    // Costo de 'insert'
-    private static final int COSTO_KILL = 1;      // Costo de 'kill'
+    private static final int COSTO_ADVANCE = 1;
+    private static final int COSTO_DELETE = 2;
+    private static final int COSTO_REPLACE = 3;
+    private static final int COSTO_INSERT = 2;
+    private static final int COSTO_KILL = 1;
 
     public static void main(String[] args) {
         String fuente = "algorithm";
@@ -20,50 +20,66 @@ public class TransformadorVoraz {
     }
 
     private static int transformar(String fuente, String objetivo) {
-        List<Nodo> nodos = new ArrayList<>();
-        Nodo nodoActual = new Nodo(null, fuente, null, 0, 0, 0);
-        nodos.add(nodoActual);
-        int costoTotal = 0;
-
         int i = 0; // Índice para la cadena fuente
         int j = 0; // Índice para la cadena objetivo
+        int costoTotal = 0;
 
-        while (j < objetivo.length()) {
-            char charObjetivo = objetivo.charAt(j);
-            if (i < fuente.length()) {
+        // Lista para almacenar operaciones con sus respectivos costos
+        List<String> operaciones = new ArrayList<>();
+
+        while (i < fuente.length() || j < objetivo.length()) {
+            // Si ambos índices están dentro de los límites
+            if (i < fuente.length() && j < objetivo.length()) {
                 char charFuente = fuente.charAt(i);
+                char charObjetivo = objetivo.charAt(j);
 
                 if (charFuente == charObjetivo) {
-                    // Si son iguales, simplemente avanzamos en ambas cadenas
+                    // Operación: advance
+                    operaciones.add("advance (costo " + COSTO_ADVANCE + ")");
                     i++;
                     j++;
+                    costoTotal += COSTO_ADVANCE;
                 } else {
-                    // Opción 1: Reemplazar
-                    String nuevoEstadoReemplazar = replace(nodoActual.getEstado(), i, charObjetivo);
-                    nodos.add(new Nodo(nodoActual, nuevoEstadoReemplazar, "replace", nodoActual.getProfundidad() + 1, nodoActual.getCosto() + COSTO_REPLACE, i));
+                    // Evaluar las opciones de menor costo
+                    int costoReplace = COSTO_REPLACE;
+                    int costoInsert = COSTO_INSERT;
+                    int costoDelete = COSTO_DELETE;
 
-                    // Opción 2: Insertar (si es necesario)
-                    String nuevoEstadoInsertar = insert(nodoActual.getEstado(), i, charObjetivo);
-                    nodos.add(new Nodo(nodoActual, nuevoEstadoInsertar, "insert", nodoActual.getProfundidad() + 1, nodoActual.getCosto() + COSTO_INSERT, i));
-                    // Avanzamos solo j, ya que hemos insertado un carácter
-                    j++;
+                    // Comparar costos y seleccionar la operación más barata
+                    if (costoReplace <= costoInsert && costoReplace <= costoDelete) {
+                        operaciones.add("replace '" + charObjetivo + "' (costo " + COSTO_REPLACE + ")");
+                        fuente = replace(fuente, i, charObjetivo);
+                        costoTotal += COSTO_REPLACE;
+                        i++;
+                        j++;
+                    } else if (costoInsert < costoDelete) {
+                        operaciones.add("insert '" + charObjetivo + "' (costo " + COSTO_INSERT + ")");
+                        fuente = insert(fuente, i, charObjetivo);
+                        costoTotal += COSTO_INSERT;
+                        j++;
+                    } else {
+                        operaciones.add("delete (costo " + COSTO_DELETE + ")");
+                        fuente = delete(fuente, i);
+                        costoTotal += COSTO_DELETE;
+                        i++;
+                    }
                 }
+            } else if (i < fuente.length()) {
+                // Si quedan caracteres en la fuente, usar kill
+                operaciones.add("kill (costo " + COSTO_KILL + ")");
+                costoTotal += COSTO_KILL;
+                break;
             } else {
-                // Si se ha llegado al final de la cadena fuente, solo insertamos los caracteres restantes
-                String nuevoEstadoInsertar = insert(nodoActual.getEstado(), i, charObjetivo);
-                nodos.add(new Nodo(nodoActual, nuevoEstadoInsertar, "insert", nodoActual.getProfundidad() + 1, nodoActual.getCosto() + COSTO_INSERT, i));
+                // Si quedan caracteres en la cadena objetivo
+                operaciones.add("insert '" + objetivo.charAt(j) + "' (costo " + COSTO_INSERT + ")");
+                fuente = insert(fuente, i, objetivo.charAt(j));
+                costoTotal += COSTO_INSERT;
                 j++;
-            }
-            // Siempre avanzamos en la fuente si hay caracteres que se deben eliminar
-            if (i < fuente.length() && j > objetivo.length()) {
-                String nuevoEstadoBorrar = delete(nodoActual.getEstado(), i);
-                nodos.add(new Nodo(nodoActual, nuevoEstadoBorrar, "delete", nodoActual.getProfundidad() + 1, nodoActual.getCosto() + COSTO_DELETE, i));
-                i++;
             }
         }
 
-        // Imprimir tabla de costos
-        imprimirTablaCostos(nodos);
+        // Imprimir la secuencia de operaciones y sus costos
+        imprimirOperaciones(operaciones);
 
         return costoTotal;
     }
@@ -82,15 +98,18 @@ public class TransformadorVoraz {
 
     private static String insert(String estado, int indice, char letra) {
         StringBuilder stringBuilder = new StringBuilder(estado);
-        stringBuilder.insert(indice, letra);
+        if (indice >= estado.length()) {
+            stringBuilder.append(letra);
+        } else {
+            stringBuilder.insert(indice, letra);
+        }
         return stringBuilder.toString();
     }
 
-    private static void imprimirTablaCostos(List<Nodo> nodos) {
-        System.out.printf("%-20s %-10s %-10s %-10s\n", "Estado", "Operador", "Profundidad", "Costo");
-        System.out.println("------------------------------------------------");
-        for (Nodo nodo : nodos) {
-            System.out.printf("%-20s %-10s %-10d %-10d\n", nodo.getEstado(), nodo.getOperador() == null ? "N/A" : nodo.getOperador(), nodo.getProfundidad(), nodo.getCosto());
+    private static void imprimirOperaciones(List<String> operaciones) {
+        System.out.println("Secuencia de operaciones y costos:");
+        for (String operacion : operaciones) {
+            System.out.println(operacion);
         }
     }
 }

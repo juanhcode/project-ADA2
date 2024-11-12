@@ -5,7 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa822252-410a-4b46-adce-3364299eaf13" name="Changes" comment="example">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Arbol.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Nodo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Operations.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TransformacionDinamica.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TransformadorVoraz.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/prueba.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/parte2/Dinamica.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/parte2/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/parte2/Tripleta.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +65,7 @@
     "Application.Main.executor": "Run",
     "Application.TransformacionDinamica.executor": "Run",
     "Application.TransformadorVoraz.executor": "Run",
+    "Application.org.example.TransformadorVoraz.executor": "Run",
     "Application.parte2.Main.executor": "Run",
     "Application.prueba.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -73,7 +83,7 @@
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.parte2.Main">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="proyectoAda" />
@@ -87,7 +97,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TransformacionDinamica" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="org.example.TransformacionDinamica" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.TransformacionDinamica" />
       <module name="proyectoAda" />
       <extension name="coverage">
@@ -100,7 +110,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TransformadorVoraz" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="org.example.TransformadorVoraz" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.TransformadorVoraz" />
       <module name="proyectoAda" />
       <extension name="coverage">
@@ -113,12 +123,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="parte2.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="parte2.Main" />
-      <module name="proyectoAda" />
+    <configuration name="org.example.adaproject.subasta.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.adaproject.subasta.Main" />
+      <module name="adaproject" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="parte2.*" />
+          <option name="PATTERN" value="org.example.adaproject.subasta.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -127,11 +137,11 @@
       </method>
     </configuration>
     <configuration name="prueba" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.prueba" />
-      <module name="proyectoAda" />
+      <option name="MAIN_CLASS_NAME" value="org.example.adaproject.terminal.prueba" />
+      <module name="adaproject" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.*" />
+          <option name="PATTERN" value="org.example.adaproject.terminal.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -139,13 +149,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.org.example.TransformacionDinamica" />
+      <item itemvalue="Application.org.example.TransformadorVoraz" />
+      <item itemvalue="Application.org.example.adaproject.subasta.Main" />
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.prueba" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.prueba" />
-        <item itemvalue="Application.parte2.Main" />
-        <item itemvalue="Application.TransformadorVoraz" />
-        <item itemvalue="Application.TransformacionDinamica" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.org.example.TransformacionDinamica" />
+        <item itemvalue="Application.org.example.TransformadorVoraz" />
+        <item itemvalue="Application.prueba" />
+        <item itemvalue="Application.org.example.adaproject.subasta.Main" />
       </list>
     </recent_temporary>
   </component>
