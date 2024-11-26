@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa822252-410a-4b46-adce-3364299eaf13" name="Changes" comment="Feat: example" />
+    <list default="true" id="aa822252-410a-4b46-adce-3364299eaf13" name="Changes" comment="Feat: punto2">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -198,7 +201,7 @@
       <workItem from="1731182874680" duration="758000" />
       <workItem from="1731382972941" duration="3109000" />
       <workItem from="1731604637197" duration="15000" />
-      <workItem from="1732584724025" duration="324000" />
+      <workItem from="1732584724025" duration="1515000" />
     </task>
     <task id="LOCAL-00001" summary="example">
       <option name="closed" value="true" />
@@ -232,7 +235,23 @@
       <option name="project" value="LOCAL" />
       <updated>1731382033605</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Feat: example">
+      <option name="closed" value="true" />
+      <created>1732585060907</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1732585060907</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Feat: punto2">
+      <option name="closed" value="true" />
+      <created>1732585236196</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1732585236196</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,7 +271,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="example" />
     <MESSAGE value="Feat: example" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat: example" />
+    <MESSAGE value="Feat: punto2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat: punto2" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
