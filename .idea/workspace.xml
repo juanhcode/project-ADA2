@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa822252-410a-4b46-adce-3364299eaf13" name="Changes" comment="Feat: example" />
+    <list default="true" id="aa822252-410a-4b46-adce-3364299eaf13" name="Changes" comment="Feat: example">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,36 +51,50 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Application.TransformacionDinamica.executor": "Run",
-    "Application.TransformadorVoraz.executor": "Run",
-    "Application.org.example.TransformacionDinamica.executor": "Run",
-    "Application.org.example.TransformadorVoraz.executor": "Run",
-    "Application.parte2.Main.executor": "Run",
-    "Application.prueba.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "devhoyos",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "/Users/juanhoyos/proyectos/pruebas/proyectoAda/src/main/java/org/example/Main.java",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "show.migrate.to.gradle.popup": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TerminalGUI.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TransformacionDinamica.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TransformadorVoraz.executor&quot;: &quot;Run&quot;,
+    &quot;Application.org.example.TransformacionDinamica.executor&quot;: &quot;Run&quot;,
+    &quot;Application.org.example.TransformadorVoraz.executor&quot;: &quot;Run&quot;,
+    &quot;Application.parte2.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.prueba.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;devhoyos&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/juanhoyos/proyectos/pruebas/proyectoAda/src/main/java/org/example/Main.java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Application.Main">
+}</component>
+  <component name="RunManager" selected="Application.TerminalGUI">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="proyectoAda" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TerminalGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.adaproject.TerminalGUI" />
+      <module name="proyectoAda" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.adaproject.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -112,19 +128,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="org.example.adaproject.subasta.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.adaproject.subasta.Main" />
-      <module name="adaproject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.adaproject.subasta.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="prueba" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.adaproject.terminal.prueba" />
       <module name="adaproject" />
@@ -139,19 +142,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.TerminalGUI" />
       <item itemvalue="Application.org.example.TransformacionDinamica" />
       <item itemvalue="Application.org.example.TransformadorVoraz" />
-      <item itemvalue="Application.org.example.adaproject.subasta.Main" />
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.prueba" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TerminalGUI" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.org.example.TransformacionDinamica" />
         <item itemvalue="Application.org.example.TransformadorVoraz" />
         <item itemvalue="Application.prueba" />
-        <item itemvalue="Application.org.example.adaproject.subasta.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -195,6 +198,8 @@
       <workItem from="1731126652165" duration="1148000" />
       <workItem from="1731129479075" duration="601000" />
       <workItem from="1731182874680" duration="758000" />
+      <workItem from="1731382972941" duration="3109000" />
+      <workItem from="1731604637197" duration="15000" />
     </task>
     <task id="LOCAL-00001" summary="example">
       <option name="closed" value="true" />
