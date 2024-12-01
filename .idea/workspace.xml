@@ -7,10 +7,6 @@
     <list default="true" id="aa822252-410a-4b46-adce-3364299eaf13" name="Changes" comment="Feat: readme">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/adaproject/TerminalGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/adaproject/TerminalGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/adaproject/terminal/Arbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/adaproject/terminal/Arbol.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/adaproject/terminal/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/adaproject/terminal/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/adaproject/terminal/TransformacionDinamica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/adaproject/terminal/TransformacionDinamica.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/adaproject/terminal/TransformadorVoraz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/adaproject/terminal/TransformadorVoraz.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +21,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -33,12 +34,12 @@
     &quot;assignee&quot;: &quot;juanhcode&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/juanhcode/project-ADA2.git",
-    "accountId": "b8fadf89-db26-46f1-a58f-4f96a1f9b4c9"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/juanhcode/project-ADA2.git&quot;,
+    &quot;accountId&quot;: &quot;b8fadf89-db26-46f1-a58f-4f96a1f9b4c9&quot;
   }
-}]]></component>
+}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
@@ -74,11 +75,14 @@
     "git-widget-placeholder": "devhoyos",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "/Users/juanhoyos/proyectos/pruebas/proyectoAda/src/main/java/org/example/Main.java",
     "settings.editor.selected.configurable": "preferences.pluginManager",
-    "show.migrate.to.gradle.popup": "false"
+    "show.migrate.to.gradle.popup": "false",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RunManager" selected="Application.TerminalGUI">
@@ -211,6 +215,7 @@
       <workItem from="1732763185995" duration="4000" />
       <workItem from="1732932462431" duration="8369000" />
       <workItem from="1733071694466" duration="628000" />
+      <workItem from="1733089950460" duration="2797000" />
     </task>
     <task id="LOCAL-00001" summary="example">
       <option name="closed" value="true" />
@@ -275,8 +280,18 @@
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="34ea3346-21f6-4648-b581-2c3f4d8915fd" value="TOOL_WINDOW" />
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
+        <entry key="34ea3346-21f6-4648-b581-2c3f4d8915fd">
+          <value>
+            <State />
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State />
