@@ -13,19 +13,48 @@ public class TransformacionDinamica {
         int costoInsert = 2;   // Costo de insertar
         int costoKill = 1;     // Costo de eliminar hasta el final
 
-        // Inicializar el nodo raíz con la cadena de origen
-        Nodo raiz = new Nodo(null, source, "", 0, 0, 0);
+        int ejecuciones = 50;
+        double[] tiempos = new double[ejecuciones];
+        double sumaTiempos = 0;
 
-        // Calcular el costo mínimo de transformación utilizando programación dinámica
-        int[][] costos = calcularCostoMinimo(raiz, target, costoAvanzar, costoDelete, costoReplace, costoInsert, costoKill);
+        // Realizar las 50 ejecuciones
+        for (int i = 0; i < ejecuciones; i++) {
+            long startTime = System.nanoTime(); // Tiempo inicial en nanosegundos
 
-        // Imprimir la tabla de costos
-        imprimirTablaDeCostos(costos, source, target);
+            // Inicializar el nodo raíz con la cadena de origen
+            Nodo raiz = new Nodo(null, source, "", 0, 0, 0);
 
-        // Costo mínimo para transformar source en target
-        int costoMinimo = costos[source.length()][target.length()];
-        System.out.println("El costo mínimo para transformar \"" + source + "\" en \"" + target + "\" es: " + costoMinimo);
+            // Calcular el costo mínimo de transformación utilizando programación dinámica
+            int[][] costos = calcularCostoMinimo(raiz, target, costoAvanzar, costoDelete, costoReplace, costoInsert, costoKill);
+
+            // Imprimir la tabla de costos
+            imprimirTablaDeCostos(costos, source, target);
+
+            // Costo mínimo para transformar source en target
+            int costoMinimo = costos[source.length()][target.length()];
+            System.out.println("El costo mínimo para transformar \"" + source + "\" en \"" + target + "\" es: " + costoMinimo);
+
+            long endTime = System.nanoTime(); // Tiempo final en nanosegundos
+
+            // Calcular la diferencia en segundos
+            double durationInSeconds = (endTime - startTime) / 1_000_000_000.0;
+            tiempos[i] = durationInSeconds;
+            sumaTiempos += durationInSeconds;
+            // Imprimir el tiempo de ejecución para la iteración
+            System.out.println("Ejecución " + (i + 1) + ": " + durationInSeconds + " segundos");
+        }
+
+        // Imprimir los tiempos de ejecución al final
+        System.out.println("\nTiempos de ejecución de las 50 ejecuciones (en segundos):");
+        for (int i = 0; i < ejecuciones; i++) {
+            System.out.println("Ejecución " + (i + 1) + ": " + tiempos[i] + " segundos");
+        }
+
+        // Calcular el tiempo promedio de ejecución
+        double promedio = sumaTiempos / ejecuciones;
+        System.out.println("\nEl tiempo promedio de ejecución fue de: " + promedio + " segundos");
     }
+
 
     public static int[][] calcularCostoMinimo(Nodo nodo, String target, int costoAvanzar, int costoDelete, int costoReplace, int costoInsert, int costoKill) {
         String source = nodo.getEstado();

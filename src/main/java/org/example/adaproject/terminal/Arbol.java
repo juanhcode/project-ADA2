@@ -9,6 +9,8 @@ public class Arbol {
     private String destino;
     private int nodosRepetidos = 0; // Contador de nodos repetidos
 
+
+
     public Arbol(String inicial, String destino) {
         this.inicial = inicial;
         this.destino = destino;
@@ -16,7 +18,7 @@ public class Arbol {
         raiz = new Nodo(null, this.inicial, "", 0, 0, 0);
     }
 
-    public void busquedaAmplitud() {
+    public String busquedaAmplitud() {
         Queue<Nodo> cola = new LinkedList<>();
         cola.add(raiz);
 
@@ -24,15 +26,17 @@ public class Arbol {
         int nodosEnProximoNivel = 0; // Nodos en el siguiente nivel
         Nodo nodoMeta = null;
         int totalNodosGenerados = 0; // Contador de nodos generados
+        StringBuilder resultado = new StringBuilder();
 
         while (!cola.isEmpty()) {
             Nodo actual = cola.poll();
             nodosEnNivelActual--;
 
-            System.out.println(actual);
+            // Agregar operador al resultado
+            resultado.append("Operador actual: ").append(actual.getOperador()).append("\n");
 
-            if(inicial.equals(destino)){
-                System.out.println("La cadena inicial es igual a la cadena destino");
+            if (inicial.equals(destino)) {
+                resultado.append("La cadena inicial es igual a la cadena destino\n");
                 break;
             }
 
@@ -63,16 +67,19 @@ public class Arbol {
 
         // Verificar si encontramos la solución después de expandir todos los nodos
         if (nodoMeta != null) {
-            System.out.println("Solución encontrada con costo: " + nodoMeta.getCosto());
-            System.out.println("Nodo que encontró la solución: " + nodoMeta);
-            imprimirRuta(nodoMeta);
+            resultado.append("Solución encontrada con costo: ").append(nodoMeta.getCosto()).append("\n");
+            resultado.append("Nodo que encontró la solución: ").append(nodoMeta).append("\n");
+            resultado.append(imprimirRuta(nodoMeta)); // Llamar al método modificado para generar la ruta
         } else {
-            System.out.println("No se encontró solución");
+            resultado.append("No se encontró solución\n");
         }
 
-        System.out.println("Nodos generados en total: " + totalNodosGenerados); // Imprimir total de nodos generados
-        System.out.println("Nodos repetidos encontrados: " + nodosRepetidos);
+        resultado.append("Nodos generados en total: ").append(totalNodosGenerados).append("\n");
+        resultado.append("Nodos repetidos encontrados: ").append(nodosRepetidos).append("\n");
+
+        return resultado.toString();
     }
+
 
 
     private LinkedList<Nodo> generarHijos(Nodo actual) {
@@ -120,15 +127,25 @@ public class Arbol {
         return hijos;
     }
 
-    private void imprimirRuta(Nodo nodo) {
-        if (nodo == null) return;
-        imprimirRuta(nodo.getPadre());
+    private String imprimirRuta(Nodo nodo) {
+        if (nodo == null) return "";
 
+        StringBuilder resultado = new StringBuilder();
+
+        // Construir la cabecera de la tabla solo si es el nodo raíz
         if (nodo.getPadre() == null) {
-            System.out.println(String.format("%-12s | %-20s | %-5s", "Operación", "Cadena", "Costo"));
-            System.out.println("-------------------------------------------");
+            resultado.append(String.format("%-12s | %-20s | %-5s\n", "Operación", "Cadena", "Costo"));
+            resultado.append("-------------------------------------------\n");
         }
 
-        System.out.println(String.format("%-12s | %-20s | %-5d", nodo.getOperador(), nodo.getEstado(), nodo.getCosto()));
+        // Llamar recursivamente al padre primero
+        String rutaPadre = imprimirRuta(nodo.getPadre());
+        resultado.append(rutaPadre);
+
+        // Añadir la información del nodo actual
+        resultado.append(String.format("%-12s | %-20s | %-5d\n", nodo.getOperador(), nodo.getEstado(), nodo.getCosto()));
+
+        return resultado.toString();
     }
+
 }

@@ -6,12 +6,19 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import org.example.adaproject.terminal.Arbol;
 
 public class TerminalGUI extends Application {
 
     public static void main(String[] args) {
         launch(args);
     }
+
+    // Variables para guardar los valores de los campos
+    private String cadenaInicial = "";
+    private String cadenaFinal = "";
+
+    private Arbol arbol;
 
     @Override
     public void start(Stage primaryStage) {
@@ -35,17 +42,12 @@ public class TerminalGUI extends Application {
         Button botonLimpiar = new Button("Limpiar");
         botonLimpiar.setStyle("-fx-background-color: #FF6347; -fx-font-weight: bold; -fx-text-fill: white; -fx-padding: 10;");
 
-        // Crear el área de texto para mostrar los procesos
-        TextArea areaProcesos = new TextArea();
-        areaProcesos.setEditable(false);
-        areaProcesos.setPromptText("Procesos");
-        areaProcesos.setWrapText(true);
-        areaProcesos.setStyle("-fx-background-color: #333333; -fx-text-fill: black; -fx-border-color: #777777; -fx-padding: 5;");
-
-        // Hacer que el TextArea tenga scrollbar
-        ScrollPane scrollPaneProcesos = new ScrollPane(areaProcesos);
-        scrollPaneProcesos.setFitToWidth(true);
-        scrollPaneProcesos.setFitToHeight(true);
+//        // Crear el área de texto para mostrar los procesos
+//        TextArea areaProcesos = new TextArea();
+//        areaProcesos.setEditable(false);
+//        areaProcesos.setPromptText("Procesos");
+//        areaProcesos.setWrapText(true);
+//        areaProcesos.setStyle("-fx-background-color: #333333; -fx-text-fill: black; -fx-border-color: #777777; -fx-padding: 5;");
 
         // Crear el área de texto para mostrar los resultados
         TextArea areaResultados = new TextArea();
@@ -55,29 +57,38 @@ public class TerminalGUI extends Application {
 
         // Manejar el evento del botón "Ejecutar"
         botonEjecutar.setOnAction(event -> {
-            String cadenaInicial = campoCadenaInicial.getText();
-            String cadenaFinal = campoCadenaFinal.getText();
-
-            // Limpiar el área de procesos antes de cada ejecución
-            areaProcesos.clear();
-
-            // Simulación de procesos como "insert", "kill", "delete", etc.
-            areaProcesos.appendText("advance\n");
-            areaProcesos.appendText("delete\n");
-            areaProcesos.appendText("replace\n");
-            areaProcesos.appendText("insert\n");
-            areaProcesos.appendText("kill\n");
+            // Obtener los valores directamente de los inputs
+            cadenaInicial = campoCadenaInicial.getText();
+            cadenaFinal = campoCadenaFinal.getText();
+            System.out.println("Cadena inicial: " + cadenaInicial);
+            System.out.println("Cadena final: " + cadenaFinal);
+            arbol = new Arbol(cadenaInicial, cadenaFinal);
+            arbol.busquedaAmplitud();
+//            // Limpiar el área de procesos antes de cada ejecución
+//            areaProcesos.clear();
+//
+//            // Simulación de procesos como "insert", "kill", "delete", etc.
+//            areaProcesos.appendText("advance\n");
+//            areaProcesos.appendText("delete\n");
+//            areaProcesos.appendText("replace\n");
+//            areaProcesos.appendText("insert\n");
+//            areaProcesos.appendText("kill\n");
 
             // Resultado final
-            areaResultados.setText("Resultados del proceso entre " + cadenaInicial + " y " + cadenaFinal);
+            areaResultados.setText("Resultados del proceso entre " + arbol.busquedaAmplitud());
         });
 
         // Manejar el evento del botón "Limpiar"
         botonLimpiar.setOnAction(event -> {
+            // Limpiar los campos de texto y áreas de salida
             campoCadenaInicial.setText("");
             campoCadenaFinal.setText("");
-            areaProcesos.setText("");
+            //areaProcesos.setText("");
             areaResultados.setText("");
+
+            // Restablecer las variables
+            cadenaInicial = "";
+            cadenaFinal = "";
         });
 
         // Crear y organizar el layout
@@ -90,7 +101,6 @@ public class TerminalGUI extends Application {
                 campoCadenaFinal,
                 botonEjecutar,
                 botonLimpiar,
-                scrollPaneProcesos,
                 areaResultados
         );
 

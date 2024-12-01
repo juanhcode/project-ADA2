@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa822252-410a-4b46-adce-3364299eaf13" name="Changes" comment="Feat: punto2">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="aa822252-410a-4b46-adce-3364299eaf13" name="Changes" comment="Feat: readme">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/adaproject/TerminalGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/adaproject/TerminalGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/adaproject/terminal/Arbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/adaproject/terminal/Arbol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/adaproject/terminal/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/adaproject/terminal/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/adaproject/terminal/TransformacionDinamica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/adaproject/terminal/TransformacionDinamica.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/adaproject/terminal/TransformadorVoraz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/adaproject/terminal/TransformadorVoraz.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,14 +33,12 @@
     &quot;assignee&quot;: &quot;juanhcode&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="b8fadf89-db26-46f1-a58f-4f96a1f9b4c9" />
-        <option name="url" value="https://github.com/juanhcode/project-ADA2.git" />
-      </UrlAndAccount>
-    </option>
-  </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/juanhcode/project-ADA2.git",
+    "accountId": "b8fadf89-db26-46f1-a58f-4f96a1f9b4c9"
+  }
+}]]></component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
@@ -52,37 +54,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TerminalGUI.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TransformacionDinamica.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TransformadorVoraz.executor&quot;: &quot;Run&quot;,
-    &quot;Application.org.example.TransformacionDinamica.executor&quot;: &quot;Run&quot;,
-    &quot;Application.org.example.TransformadorVoraz.executor&quot;: &quot;Run&quot;,
-    &quot;Application.parte2.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.prueba.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;devhoyos&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/juanhoyos/proyectos/pruebas/proyectoAda/src/main/java/org/example/Main.java&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Application.SubastaGUI.executor": "Run",
+    "Application.TerminalGUI.executor": "Run",
+    "Application.TransformacionDinamica.executor": "Run",
+    "Application.TransformadorVoraz.executor": "Run",
+    "Application.org.example.TransformacionDinamica.executor": "Run",
+    "Application.org.example.TransformadorVoraz.executor": "Run",
+    "Application.org.example.adaproject.terminal.Main.executor": "Run",
+    "Application.parte2.Main.executor": "Run",
+    "Application.prueba.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "devhoyos",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "/Users/juanhoyos/proyectos/pruebas/proyectoAda/src/main/java/org/example/Main.java",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "show.migrate.to.gradle.popup": "false"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Application.TerminalGUI">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+    <configuration name="SubastaGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.adaproject.SubastaGUI" />
       <module name="proyectoAda" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.*" />
+          <option name="PATTERN" value="org.example.adaproject.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -103,12 +108,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="org.example.TransformacionDinamica" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.TransformacionDinamica" />
+    <configuration name="TransformacionDinamica" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.adaproject.terminal.TransformacionDinamica" />
       <module name="proyectoAda" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.*" />
+          <option name="PATTERN" value="org.example.adaproject.terminal.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -116,12 +121,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="org.example.TransformadorVoraz" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.TransformadorVoraz" />
+    <configuration name="TransformadorVoraz" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.adaproject.terminal.TransformadorVoraz" />
       <module name="proyectoAda" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.*" />
+          <option name="PATTERN" value="org.example.adaproject.terminal.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -129,9 +134,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="prueba" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.adaproject.terminal.prueba" />
-      <module name="adaproject" />
+    <configuration name="org.example.adaproject.terminal.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.adaproject.terminal.Main" />
+      <module name="proyectoAda" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.adaproject.terminal.*" />
@@ -143,26 +148,27 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.SubastaGUI" />
       <item itemvalue="Application.TerminalGUI" />
-      <item itemvalue="Application.org.example.TransformacionDinamica" />
-      <item itemvalue="Application.org.example.TransformadorVoraz" />
-      <item itemvalue="Application.Main" />
-      <item itemvalue="Application.prueba" />
+      <item itemvalue="Application.TransformacionDinamica" />
+      <item itemvalue="Application.TransformadorVoraz" />
+      <item itemvalue="Application.org.example.adaproject.terminal.Main" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.TerminalGUI" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.org.example.TransformacionDinamica" />
-        <item itemvalue="Application.org.example.TransformadorVoraz" />
-        <item itemvalue="Application.prueba" />
+        <item itemvalue="Application.org.example.adaproject.terminal.Main" />
+        <item itemvalue="Application.SubastaGUI" />
+        <item itemvalue="Application.TransformadorVoraz" />
+        <item itemvalue="Application.TransformacionDinamica" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-17.0.10-corretto-17.0.10-3183f394aec4-96c0d24d" />
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.21565.193" />
+        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-IU-243.21565.193" />
       </set>
     </attachedChunks>
   </component>
@@ -201,7 +207,10 @@
       <workItem from="1731182874680" duration="758000" />
       <workItem from="1731382972941" duration="3109000" />
       <workItem from="1731604637197" duration="15000" />
-      <workItem from="1732584724025" duration="1515000" />
+      <workItem from="1732584724025" duration="8946000" />
+      <workItem from="1732763185995" duration="4000" />
+      <workItem from="1732932462431" duration="8369000" />
+      <workItem from="1733071694466" duration="628000" />
     </task>
     <task id="LOCAL-00001" summary="example">
       <option name="closed" value="true" />
@@ -251,7 +260,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732585236196</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Feat: readme">
+      <option name="closed" value="true" />
+      <created>1732586460387</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1732586460387</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -272,7 +289,8 @@
     <MESSAGE value="example" />
     <MESSAGE value="Feat: example" />
     <MESSAGE value="Feat: punto2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat: punto2" />
+    <MESSAGE value="Feat: readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat: readme" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

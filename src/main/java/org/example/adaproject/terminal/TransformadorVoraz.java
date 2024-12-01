@@ -12,11 +12,53 @@ public class TransformadorVoraz {
     private static final int COSTO_KILL = 1;
 
     public static void main(String[] args) {
+        //rescue
+        //secure
+
+        //earth
+        //heart
+
+        //francesa
+        //ancestro
+
+        //ingenioso
+        //ingeniero
+
+
+        //algorithm
+        //altruistic
+
+
         String fuente = "algorithm";
         String objetivo = "altruistic";
 
-        int costoTotal = transformar(fuente, objetivo);
-        System.out.println("Costo total de la transformación: " + costoTotal);
+        int ejecuciones = 50;
+        double[] tiempos = new double[ejecuciones];
+        double sumaTiempos = 0;
+
+        for (int i = 0; i < ejecuciones; i++) {
+            long startTime = System.nanoTime(); // Tiempo inicial en nanosegundos
+            int costoTotal = transformar(fuente, objetivo);
+            System.out.println("Costo total de la transformación: " + costoTotal);
+            long endTime = System.nanoTime(); // Tiempo final en nanosegundos
+
+            // Calcular la diferencia en segundos
+            double durationInSeconds = (endTime - startTime) / 1_000_000_000.0;
+            tiempos[i] = durationInSeconds;
+            sumaTiempos += durationInSeconds;
+            // Imprimir el tiempo de ejecución para la iteración
+            System.out.println("Ejecución " + (i + 1) + ": " + durationInSeconds + " segundos");
+        }
+
+        // Imprimir los tiempos de ejecución al final
+        System.out.println("\nTiempos de ejecución de las 50 ejecuciones (en segundos):");
+        for (int i = 0; i < ejecuciones; i++) {
+            System.out.println("Ejecución " + (i + 1) + ": " + tiempos[i] + " segundos");
+        }
+
+        // Calcular el tiempo promedio de ejecución
+        double promedio = sumaTiempos / ejecuciones;
+        System.out.println("\nEl tiempo promedio de ejecución fue de: " + promedio + " segundos");
     }
 
     private static int transformar(String fuente, String objetivo) {
