@@ -95,10 +95,9 @@ public class TerminalGUI extends Application {
         Button botonLimpiar = new Button("Limpiar");
         botonLimpiar.setStyle("-fx-background-color: #FF6347; -fx-font-weight: bold; -fx-text-fill: white; -fx-padding: 10;");
 
-        Button botonEjecutarCosto = new Button("Ejecutar Costo");
-        botonEjecutarCosto.setStyle("-fx-background-color: #4682B4; -fx-font-weight: bold; -fx-text-fill: white; -fx-padding: 10;");
 
-        botones.getChildren().addAll(botonEjecutar, botonLimpiar, botonEjecutarCosto);
+
+        botones.getChildren().addAll(botonEjecutar, botonLimpiar);
 
 // Crear el área de texto para mostrar los resultados
         TextArea areaResultados = new TextArea();
@@ -138,19 +137,13 @@ public class TerminalGUI extends Application {
             areaResultados.clear();
         });
 
-        botonEjecutarCosto.setOnAction(event -> {
-            System.out.println("Costo de avanzar: " + campoAvanzar.getText());
-            System.out.println("Costo de borrar: " + campoBorrar.getText());
-            System.out.println("Costo de reemplazar: " + campoReemplazar.getText());
-            System.out.println("Costo de insertar: " + campoInsertar.getText());
-            System.out.println("Costo de eliminar hasta el final: " + campoEliminarFinal.getText());
-        });
+
 
 // Crear y organizar el layout principal
         VBox layout = new VBox(20);
         layout.setPadding(new Insets(20));
         layout.setStyle("-fx-background-color: black;");
-        layout.getChildren().addAll(tituloPrincipal, campoCadenaInicial, campoCadenaFinal, botonEjecutar,  // Aquí se coloca el botón debajo de los campos de texto
+        layout.getChildren().addAll(tituloPrincipal, campoCadenaInicial, campoCadenaFinal,
                 tituloCostos, gridCostos, botones, areaResultados);
 
 // Configurar la escena
