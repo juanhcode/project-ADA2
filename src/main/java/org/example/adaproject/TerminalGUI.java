@@ -2,8 +2,11 @@ package org.example.adaproject;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import org.example.adaproject.terminal.Arbol;
@@ -24,9 +27,9 @@ public class TerminalGUI extends Application {
     public void start(Stage primaryStage) {
         // Crear el título principal
         Label tituloPrincipal = new Label("Terminal Inteligente");
-        tituloPrincipal.setStyle("-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #FFFFFF; -fx-font-family: 'Arial'; -fx-alignment: center; -fx-padding: 10;");
+        tituloPrincipal.setStyle("-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #FFFFFF; -fx-font-family: 'Arial'; -fx-padding: 10;");
 
-        // Crear los campos de texto
+// Crear los campos de texto principales
         TextField campoCadenaInicial = new TextField();
         campoCadenaInicial.setPromptText("Cadena inicial");
         campoCadenaInicial.setStyle("-fx-background-color: #333333; -fx-text-fill: white; -fx-border-color: #777777; -fx-padding: 5;");
@@ -35,81 +38,119 @@ public class TerminalGUI extends Application {
         campoCadenaFinal.setPromptText("Cadena final");
         campoCadenaFinal.setStyle("-fx-background-color: #333333; -fx-text-fill: white; -fx-border-color: #777777; -fx-padding: 5;");
 
-        // Crear los botones "Ejecutar" y "Limpiar"
+// Crear el título de la sección de costos
+        Label tituloCostos = new Label("Ingresar costos");
+        tituloCostos.setStyle("-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #FFFFFF; -fx-font-family: 'Arial'; -fx-padding: 10;");
+
+// Crear campos adicionales con etiquetas organizados en filas
+        GridPane gridCostos = new GridPane();
+        gridCostos.setHgap(10);
+        gridCostos.setVgap(10);
+        gridCostos.setPadding(new Insets(10));
+        gridCostos.setAlignment(Pos.CENTER);
+
+// Etiquetas y campos de texto
+        String labelStyle = "-fx-text-fill: white; -fx-font-size: 14px;";
+
+        Label labelAvanzar = new Label("Costo de avanzar:");
+        labelAvanzar.setStyle(labelStyle);
+        TextField campoAvanzar = new TextField();
+        campoAvanzar.setMaxWidth(150);
+
+        Label labelBorrar = new Label("Costo de borrar:");
+        labelBorrar.setStyle(labelStyle);
+        TextField campoBorrar = new TextField();
+        campoBorrar.setMaxWidth(150);
+
+        Label labelReemplazar = new Label("Costo de reemplazar:");
+        labelReemplazar.setStyle(labelStyle);
+        TextField campoReemplazar = new TextField();
+        campoReemplazar.setMaxWidth(150);
+
+        Label labelInsertar = new Label("Costo de insertar:");
+        labelInsertar.setStyle(labelStyle);
+        TextField campoInsertar = new TextField();
+        campoInsertar.setMaxWidth(150);
+
+        Label labelEliminarFinal = new Label("Costo de eliminar:");
+        labelEliminarFinal.setStyle(labelStyle);
+        TextField campoEliminarFinal = new TextField();
+        campoEliminarFinal.setMaxWidth(150);
+
+// Agregar elementos al grid
+        gridCostos.addRow(0, labelAvanzar, campoAvanzar);
+        gridCostos.addRow(1, labelBorrar, campoBorrar);
+        gridCostos.addRow(2, labelReemplazar, campoReemplazar);
+        gridCostos.addRow(3, labelInsertar, campoInsertar);
+        gridCostos.addRow(4, labelEliminarFinal, campoEliminarFinal);
+
+// Crear botones
+        HBox botones = new HBox(15);
+        botones.setAlignment(Pos.CENTER);
+        botones.setPadding(new Insets(10));
+
         Button botonEjecutar = new Button("Ejecutar");
         botonEjecutar.setStyle("-fx-background-color: #32CD32; -fx-font-weight: bold; -fx-text-fill: white; -fx-padding: 10;");
 
         Button botonLimpiar = new Button("Limpiar");
         botonLimpiar.setStyle("-fx-background-color: #FF6347; -fx-font-weight: bold; -fx-text-fill: white; -fx-padding: 10;");
 
-//        // Crear el área de texto para mostrar los procesos
-//        TextArea areaProcesos = new TextArea();
-//        areaProcesos.setEditable(false);
-//        areaProcesos.setPromptText("Procesos");
-//        areaProcesos.setWrapText(true);
-//        areaProcesos.setStyle("-fx-background-color: #333333; -fx-text-fill: black; -fx-border-color: #777777; -fx-padding: 5;");
 
-        // Crear el área de texto para mostrar los resultados
+
+        botones.getChildren().addAll(botonEjecutar, botonLimpiar);
+
+// Crear el área de texto para mostrar los resultados
         TextArea areaResultados = new TextArea();
         areaResultados.setEditable(false);
         areaResultados.setPromptText("Resultados");
-        areaResultados.setStyle("-fx-background-color: #333333; -fx-text-fill: black; -fx-border-color: #777777; -fx-padding: 5;");
 
-        // Manejar el evento del botón "Ejecutar"
+// Aumentar tamaño de la fuente, hacer el fondo oscuro y el texto negro
+        areaResultados.setStyle("-fx-background-color: #333333; " +  // Fondo oscuro
+                "-fx-text-fill: black; " +            // Texto en negro
+                "-fx-font-size: 16px; " +             // Aumentar tamaño de la fuente
+                "-fx-border-color: #777777; " +      // Color del borde
+                "-fx-padding: 10;"                    // Espaciado interno
+        );
+
+// Establecer tamaño más grande para la TextArea
+        areaResultados.setPrefHeight(400); // Aumentar altura
+        areaResultados.setPrefWidth(500);  // Aumentar ancho
+
+// Manejar los eventos de los botones
         botonEjecutar.setOnAction(event -> {
-            // Obtener los valores directamente de los inputs
             cadenaInicial = campoCadenaInicial.getText();
             cadenaFinal = campoCadenaFinal.getText();
             System.out.println("Cadena inicial: " + cadenaInicial);
             System.out.println("Cadena final: " + cadenaFinal);
             arbol = new Arbol(cadenaInicial, cadenaFinal);
-            arbol.busquedaAmplitud();
-//            // Limpiar el área de procesos antes de cada ejecución
-//            areaProcesos.clear();
-//
-//            // Simulación de procesos como "insert", "kill", "delete", etc.
-//            areaProcesos.appendText("advance\n");
-//            areaProcesos.appendText("delete\n");
-//            areaProcesos.appendText("replace\n");
-//            areaProcesos.appendText("insert\n");
-//            areaProcesos.appendText("kill\n");
-
-            // Resultado final
-            areaResultados.setText("Resultados del proceso entre " + arbol.busquedaAmplitud());
+            areaResultados.setText("Resultados del proceso: " + arbol.busquedaAmplitud());
         });
 
-        // Manejar el evento del botón "Limpiar"
         botonLimpiar.setOnAction(event -> {
-            // Limpiar los campos de texto y áreas de salida
-            campoCadenaInicial.setText("");
-            campoCadenaFinal.setText("");
-            //areaProcesos.setText("");
-            areaResultados.setText("");
-
-            // Restablecer las variables
-            cadenaInicial = "";
-            cadenaFinal = "";
+            campoCadenaInicial.clear();
+            campoCadenaFinal.clear();
+            campoAvanzar.clear();
+            campoBorrar.clear();
+            campoReemplazar.clear();
+            campoInsertar.clear();
+            campoEliminarFinal.clear();
+            areaResultados.clear();
         });
 
-        // Crear y organizar el layout
-        VBox layout = new VBox(15);
-        layout.setPadding(new Insets(20));
-        layout.setStyle("-fx-background-color: black;"); // Fondo negro para el layout
-        layout.getChildren().addAll(
-                tituloPrincipal,
-                campoCadenaInicial,
-                campoCadenaFinal,
-                botonEjecutar,
-                botonLimpiar,
-                areaResultados
-        );
 
-        // Crear la escena y configurarla para que sea flexible
-        Scene scene = new Scene(layout);
+
+// Crear y organizar el layout principal
+        VBox layout = new VBox(20);
+        layout.setPadding(new Insets(20));
+        layout.setStyle("-fx-background-color: black;");
+        layout.getChildren().addAll(tituloPrincipal, campoCadenaInicial, campoCadenaFinal,
+                tituloCostos, gridCostos, botones, areaResultados);
+
+// Configurar la escena
+        Scene scene = new Scene(layout, 900, 900);
         primaryStage.setScene(scene);
         primaryStage.setTitle("Terminal Inteligente");
-        primaryStage.setMinWidth(600); // Ancho mínimo
-        primaryStage.setMinHeight(400); // Alto mínimo
         primaryStage.show();
+
     }
 }
