@@ -2,10 +2,12 @@ package org.example.adaproject.terminal;
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println("Hello, World!");
         String inicial = "rescue";
         String destino = "secure";
-        Arbol arbol = new Arbol(inicial, destino);
-        arbol.busquedaAmplitud();
+        //Arbol arbol = new Arbol(inicial, destino, 2, 4, 5, 1, 7);
+        //String result = arbol.busquedaAmplitud();
+        //System.out.println(result);
 //
 //        int ejecuciones = 1;
 //        double[] tiempos = new double[ejecuciones];

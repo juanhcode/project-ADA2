@@ -9,12 +9,22 @@ public class Arbol {
     private String destino;
     private int nodosRepetidos = 0; // Contador de nodos repetidos
 
+    // Variables para costos
+    private int costoAvanzar;
+    private int costoBorrar;
+    private int costoReemplazar;
+    private int costoInsertar;
+    private int costoEliminarFinal;
 
 
-    public Arbol(String inicial, String destino) {
+    public Arbol(String inicial, String destino, int costoAvanzar, int costoBorrar, int costoReemplazar, int costoInsertar, int costoEliminarFinal) {
         this.inicial = inicial;
         this.destino = destino;
-        // Nodo raíz con costo 0 y profundidad 0
+        this.costoAvanzar = costoAvanzar;
+        this.costoBorrar = costoBorrar;
+        this.costoReemplazar = costoReemplazar;
+        this.costoInsertar = costoInsertar;
+        this.costoEliminarFinal = costoEliminarFinal;
         raiz = new Nodo(null, this.inicial, "", 0, 0, 0);
     }
 
@@ -32,8 +42,6 @@ public class Arbol {
             Nodo actual = cola.poll();
             nodosEnNivelActual--;
 
-            // Agregar operador al resultado
-            resultado.append("Operador actual: ").append(actual.getOperador()).append("\n");
 
             if (inicial.equals(destino)) {
                 resultado.append("La cadena inicial es igual a la cadena destino\n");
@@ -89,38 +97,38 @@ public class Arbol {
         int indice = actual.getIndice();
         int costoActual = actual.getCosto();
 
-        // Operación: Avanzar (advance)
+        // Operación: Avanzar
         if (indice < estado.length()) {
             int nuevoIndice = operations.avanzar(indice);
-            Nodo hijoAvanzar = new Nodo(actual, estado, "Advance", actual.getProfundidad() + 1, costoActual + 'a', nuevoIndice);
+            Nodo hijoAvanzar = new Nodo(actual, estado, "Advance", actual.getProfundidad() + 1, costoActual + costoAvanzar, nuevoIndice);
             hijos.add(hijoAvanzar);
         }
 
-        // Operación: Borrar (delete)
+        // Operación: Borrar
         if (indice < estado.length()) {
             String nuevoEstado = operations.delete(indice);
-            Nodo hijoDelete = new Nodo(actual, nuevoEstado, "Delete", actual.getProfundidad() + 1, costoActual + 'd', indice);
+            Nodo hijoDelete = new Nodo(actual, nuevoEstado, "Delete", actual.getProfundidad() + 1, costoActual + costoBorrar, indice);
             hijos.add(hijoDelete);
         }
 
-        // Operación: Reemplazar (replace)
-        if (indice < estado.length() && indice < destino.length()) { // Verificar longitud de destino
+        // Operación: Reemplazar
+        if (indice < estado.length() && indice < destino.length()) {
             String nuevoEstado = operations.replace(indice, destino.charAt(indice));
-            Nodo hijoReplace = new Nodo(actual, nuevoEstado, "Replace", actual.getProfundidad() + 1, costoActual + 'r', indice + 1);
+            Nodo hijoReplace = new Nodo(actual, nuevoEstado, "Replace", actual.getProfundidad() + 1, costoActual + costoReemplazar, indice + 1);
             hijos.add(hijoReplace);
         }
 
-        // Operación: Insertar (insert)
-        if (indice <= estado.length() && indice < destino.length()) { // Verificar longitud de destino
+        // Operación: Insertar
+        if (indice <= estado.length() && indice < destino.length()) {
             String nuevoEstado = operations.insert(indice, destino.charAt(indice));
-            Nodo hijoInsert = new Nodo(actual, nuevoEstado, "Insert", actual.getProfundidad() + 1, costoActual + 'i', indice + 1);
+            Nodo hijoInsert = new Nodo(actual, nuevoEstado, "Insert", actual.getProfundidad() + 1, costoActual + costoInsertar, indice + 1);
             hijos.add(hijoInsert);
         }
 
-        // Operación: Eliminar hasta el final (kill)
+        // Operación: Eliminar hasta el final
         if (indice < estado.length()) {
             String nuevoEstado = operations.kill(indice);
-            Nodo hijoKill = new Nodo(actual, nuevoEstado, "Kill", actual.getProfundidad() + 1, costoActual + 'k', indice);
+            Nodo hijoKill = new Nodo(actual, nuevoEstado, "Kill", actual.getProfundidad() + 1, costoActual + costoEliminarFinal, indice);
             hijos.add(hijoKill);
         }
 

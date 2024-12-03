@@ -118,13 +118,29 @@ public class TerminalGUI extends Application {
 
 // Manejar los eventos de los botones
         botonEjecutar.setOnAction(event -> {
-            cadenaInicial = campoCadenaInicial.getText();
-            cadenaFinal = campoCadenaFinal.getText();
-            System.out.println("Cadena inicial: " + cadenaInicial);
-            System.out.println("Cadena final: " + cadenaFinal);
-            arbol = new Arbol(cadenaInicial, cadenaFinal);
-            areaResultados.setText("Resultados del proceso: " + arbol.busquedaAmplitud());
+            try {
+                // Capturar cadenas inicial y final
+                cadenaInicial = campoCadenaInicial.getText();
+                cadenaFinal = campoCadenaFinal.getText();
+
+                // Capturar los costos ingresados
+                int costoAvanzar = Integer.parseInt(campoAvanzar.getText());
+                int costoBorrar = Integer.parseInt(campoBorrar.getText());
+                int costoReemplazar = Integer.parseInt(campoReemplazar.getText());
+                int costoInsertar = Integer.parseInt(campoInsertar.getText());
+                int costoEliminarFinal = Integer.parseInt(campoEliminarFinal.getText());
+
+                // Crear el árbol con los costos personalizados
+                arbol = new Arbol(cadenaInicial, cadenaFinal, costoAvanzar, costoBorrar, costoReemplazar, costoInsertar, costoEliminarFinal);
+
+                // Ejecutar búsqueda
+                areaResultados.setText("Resultados del proceso: " + arbol.busquedaAmplitud());
+            } catch (NumberFormatException e) {
+                // Manejo de error si no se ingresan números válidos
+                areaResultados.setText("Por favor ingresa valores numéricos válidos para los costos.");
+            }
         });
+
 
         botonLimpiar.setOnAction(event -> {
             campoCadenaInicial.clear();
