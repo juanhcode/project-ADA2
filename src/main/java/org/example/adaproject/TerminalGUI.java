@@ -198,6 +198,10 @@ public class TerminalGUI extends Application {
                 cadenaInicial = campoCadenaInicial.getText();
                 cadenaFinal = campoCadenaFinal.getText();
 
+                boolean isFuerzaBrutaSelected = checkboxFuerzaBruta.isSelected();
+                boolean isDinamicaSelected = checkboxDinamica.isSelected();
+                boolean isVorazSelected = checkboxVoraz.isSelected();
+
                 // Capturar los costos ingresados
                 int costoAvanzar = Integer.parseInt(campoAvanzar.getText());
                 int costoBorrar = Integer.parseInt(campoBorrar.getText());
@@ -205,11 +209,15 @@ public class TerminalGUI extends Application {
                 int costoInsertar = Integer.parseInt(campoInsertar.getText());
                 int costoEliminarFinal = Integer.parseInt(campoEliminarFinal.getText());
 
-                // Crear el árbol con los costos personalizados
-                arbol = new Arbol(cadenaInicial, cadenaFinal, costoAvanzar, costoBorrar, costoReemplazar, costoInsertar, costoEliminarFinal);
+                if (isFuerzaBrutaSelected) {
+                    // Crear el árbol con los costos personalizados
+                    arbol = new Arbol(cadenaInicial, cadenaFinal, costoAvanzar, costoBorrar, costoReemplazar, costoInsertar, costoEliminarFinal);
 
-                // Ejecutar búsqueda
-                areaResultados.setText("Resultados del proceso: " + arbol.busquedaAmplitud());
+                    // Ejecutar búsqueda
+                    areaResultados.setText("Resultados del proceso: " + arbol.busquedaAmplitud());
+                }
+
+
             } catch (NumberFormatException e) {
                 areaResultados.setText("Por favor ingresa valores numéricos válidos para los costos.");
             }
