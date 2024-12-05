@@ -10,6 +10,8 @@ module org.example.adaproject {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires java.desktop;
+    requires org.jfree.jfreechart;
 
     opens org.example.adaproject to javafx.fxml;
     exports org.example.adaproject;
