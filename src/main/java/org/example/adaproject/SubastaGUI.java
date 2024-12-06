@@ -14,7 +14,7 @@ public class SubastaGUI extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        // Título principal
+       // Título principal
         Label tituloPrincipal = new Label("Problema de Subastas");
         tituloPrincipal.setStyle(
                 "-fx-font-size: 30px; " +
@@ -28,10 +28,27 @@ public class SubastaGUI extends Application {
         );
         tituloPrincipal.setMaxWidth(Double.MAX_VALUE);
 
-        // Contenedor principal
-        VBox layout = new VBox(20);
-        layout.setPadding(new Insets(20));
-        layout.setStyle("-fx-background-color: #000000;");
+        // Crear los CheckBox
+        CheckBox checkBoxDinamica = new CheckBox("Dinámica");
+        checkBoxDinamica.setStyle("-fx-font-size: 16px; -fx-text-fill: white;");
+
+        CheckBox checkBoxVoraz = new CheckBox("Voraz");
+        checkBoxVoraz.setStyle("-fx-font-size: 16px; -fx-text-fill: white;");
+
+        CheckBox checkBoxBruta = new CheckBox("Bruta");
+        checkBoxBruta.setStyle("-fx-font-size: 16px; -fx-text-fill: white;");
+
+        // Contenedor para los CheckBox
+        HBox hBoxCheckBoxes = new HBox(20, checkBoxDinamica, checkBoxVoraz, checkBoxBruta);
+        hBoxCheckBoxes.setPadding(new Insets(10));
+        hBoxCheckBoxes.setStyle("-fx-alignment: center;");
+
+        // Crear el TextArea debajo de los CheckBox
+        TextArea textAreaInfo = new TextArea();
+        textAreaInfo.setPromptText("Escribe aquí información adicional...");
+        textAreaInfo.setStyle("-fx-font-size: 14px; -fx-font-family: 'Segoe UI';");
+        textAreaInfo.setPrefHeight(100);
+        textAreaInfo.setWrapText(true);
 
         // Crear un contenedor dinámico para oferentes
         VBox contenedorOferentes = new VBox(15);
@@ -60,12 +77,10 @@ public class SubastaGUI extends Application {
             HBox hBoxOferente = new HBox(15, precio, minimo, maximo);
             hBoxOferente.setPadding(new Insets(10));
             hBoxOferente.setStyle("-fx-alignment: center;");
-
             HBox.setHgrow(precio, Priority.ALWAYS);
             HBox.setHgrow(minimo, Priority.ALWAYS);
             HBox.setHgrow(maximo, Priority.ALWAYS);
 
-            // Contenedor individual para cada oferente
             VBox contenedorIndividual = new VBox(5, tituloOferente, hBoxOferente);
             contenedorOferentes.getChildren().add(contenedorIndividual);
         };
@@ -76,10 +91,17 @@ public class SubastaGUI extends Application {
             if (totalOferentes > 0) {
                 contenedorOferentes.getChildren().remove(totalOferentes - 1);
                 contadorOferentes.decrementAndGet();
+            } else {
+                // Mostrar alerta si no hay oferentes
+                Alert alerta = new Alert(Alert.AlertType.WARNING);
+                alerta.setTitle("Advertencia");
+                alerta.setHeaderText(null);
+                alerta.setContentText("No hay más oferentes para quitar.");
+                alerta.showAndWait();
             }
         };
 
-        // Agregar los dos primeros oferentes por defecto
+        // Agregar dos oferentes por defecto
         agregarOferente.run();
         agregarOferente.run();
 
@@ -103,12 +125,9 @@ public class SubastaGUI extends Application {
         hBoxBotones.setPadding(new Insets(15));
         hBoxBotones.setStyle("-fx-alignment: center;");
 
-        // Eventos de los botones
+        // Agregar eventos
         botonAgregarOferente.setOnAction(event -> agregarOferente.run());
         botonQuitarOferente.setOnAction(event -> quitarOferente.run());
-        botonEjecutar.setOnAction(event -> {
-            System.out.println("Ejecutando la subasta...");
-        });
         botonLimpiar.setOnAction(event -> {
             contenedorOferentes.getChildren().clear();
             contadorOferentes.set(1);
@@ -116,15 +135,22 @@ public class SubastaGUI extends Application {
             agregarOferente.run();
         });
 
-        // Añadir todos los elementos al layout principal
-        layout.getChildren().addAll(tituloPrincipal, contenedorOferentes, hBoxBotones);
-        VBox.setVgrow(contenedorOferentes, Priority.ALWAYS);
+        // Crear layout principal
+        VBox layoutPrincipal = new VBox(20, tituloPrincipal, hBoxCheckBoxes, textAreaInfo, contenedorOferentes, hBoxBotones);
+        layoutPrincipal.setPadding(new Insets(20));
+        layoutPrincipal.setStyle("-fx-background-color: #000000;");
 
-        // Configuración de la escena
-        Scene scene = new Scene(layout, 800, 800); // Tamaño inicial más grande
+        // Crear ScrollPane y agregar el layout principal
+        ScrollPane scrollPane = new ScrollPane(layoutPrincipal);
+        scrollPane.setFitToWidth(true);
+        scrollPane.setStyle("-fx-background: #000000;");
+
+        // Crear la escena
+        Scene scene = new Scene(scrollPane, 800, 600);
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Problema de Subastas - Con Quitar Oferentes");
-        primaryStage.setResizable(true);
+        primaryStage.setTitle("Problema de Subastas con Scroll");
+        primaryStage.setMinWidth(600);
+        primaryStage.setMinHeight(400);
         primaryStage.show();
     }
 }
