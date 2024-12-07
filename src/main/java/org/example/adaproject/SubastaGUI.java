@@ -152,6 +152,8 @@ public class SubastaGUI extends Application {
         );
 
 
+
+
         botonEjecutar.setOnAction(event -> {
             try {
                 // Número total de acciones (puedes cambiar este valor si es configurable)
@@ -224,7 +226,7 @@ public class SubastaGUI extends Application {
         );
 
         // Layout para los botones de acción
-        HBox hBoxBotones = new HBox(20, botonAgregarOferente, botonQuitarOferente, botonEjecutar, botonLimpiar);
+        HBox hBoxBotones = new HBox(20, botonAgregarOferente, botonQuitarOferente, botonEjecutar, botonLimpiar, botonGraficas);
         hBoxBotones.setPadding(new Insets(15));
         hBoxBotones.setStyle("-fx-alignment: center;");
 
