@@ -5,63 +5,14 @@ import java.util.List;
 
 public class TransformadorVoraz {
     // Costos de las operaciones
-    private static final int COSTO_ADVANCE = 1;
-    private static final int COSTO_DELETE = 2;
-    private static final int COSTO_REPLACE = 3;
-    private static final int COSTO_INSERT = 2;
-    private static final int COSTO_KILL = 1;
+    public static int COSTO_ADVANCE;
+    public static int COSTO_DELETE;
+    public static int COSTO_REPLACE;
+    public static int COSTO_INSERT;
+    public static int COSTO_KILL;
 
-    public static void main(String[] args) {
-        //rescue
-        //secure
-
-        //earth
-        //heart
-
-        //francesa
-        //ancestro
-
-        //ingenioso
-        //ingeniero
-
-
-        //algorithm
-        //altruistic
-
-
-        String fuente = "algorithm";
-        String objetivo = "altruistic";
-
-        int ejecuciones = 50;
-        double[] tiempos = new double[ejecuciones];
-        double sumaTiempos = 0;
-
-        for (int i = 0; i < ejecuciones; i++) {
-            long startTime = System.nanoTime(); // Tiempo inicial en nanosegundos
-            int costoTotal = transformar(fuente, objetivo);
-            System.out.println("Costo total de la transformación: " + costoTotal);
-            long endTime = System.nanoTime(); // Tiempo final en nanosegundos
-
-            // Calcular la diferencia en segundos
-            double durationInSeconds = (endTime - startTime) / 1_000_000_000.0;
-            tiempos[i] = durationInSeconds;
-            sumaTiempos += durationInSeconds;
-            // Imprimir el tiempo de ejecución para la iteración
-            System.out.println("Ejecución " + (i + 1) + ": " + durationInSeconds + " segundos");
-        }
-
-        // Imprimir los tiempos de ejecución al final
-        System.out.println("\nTiempos de ejecución de las 50 ejecuciones (en segundos):");
-        for (int i = 0; i < ejecuciones; i++) {
-            System.out.println("Ejecución " + (i + 1) + ": " + tiempos[i] + " segundos");
-        }
-
-        // Calcular el tiempo promedio de ejecución
-        double promedio = sumaTiempos / ejecuciones;
-        System.out.println("\nEl tiempo promedio de ejecución fue de: " + promedio + " segundos");
-    }
-
-    private static int transformar(String fuente, String objetivo) {
+    public static int transformar(String fuente, String objetivo, StringBuilder logOperaciones) {
+        StringBuilder fuenteBuilder = new StringBuilder(fuente);
         int i = 0; // Índice para la cadena fuente
         int j = 0; // Índice para la cadena objetivo
         int costoTotal = 0;
@@ -69,89 +20,71 @@ public class TransformadorVoraz {
         // Lista para almacenar operaciones con sus respectivos costos
         List<String> operaciones = new ArrayList<>();
 
-        while (i < fuente.length() || j < objetivo.length()) {
-            // Si ambos índices están dentro de los límites
-            if (i < fuente.length() && j < objetivo.length()) {
-                char charFuente = fuente.charAt(i);
+        while (i < fuenteBuilder.length() || j < objetivo.length()) {
+            if (i < fuenteBuilder.length() && j < objetivo.length()) {
+                char charFuente = fuenteBuilder.charAt(i);
                 char charObjetivo = objetivo.charAt(j);
 
                 if (charFuente == charObjetivo) {
-                    // Operación: advance
                     operaciones.add("advance (costo " + COSTO_ADVANCE + ")");
                     i++;
                     j++;
                     costoTotal += COSTO_ADVANCE;
                 } else {
-                    // Evaluar las opciones de menor costo
                     int costoReplace = COSTO_REPLACE;
                     int costoInsert = COSTO_INSERT;
                     int costoDelete = COSTO_DELETE;
 
-                    // Comparar costos y seleccionar la operación más barata
-                    if (costoReplace <= costoInsert && costoReplace <= costoDelete) {
-                        operaciones.add("replace '" + charObjetivo + "' (costo " + COSTO_REPLACE + ")");
-                        fuente = replace(fuente, i, charObjetivo);
-                        costoTotal += COSTO_REPLACE;
-                        i++;
-                        j++;
-                    } else if (costoInsert < costoDelete) {
-                        operaciones.add("insert '" + charObjetivo + "' (costo " + COSTO_INSERT + ")");
-                        fuente = insert(fuente, i, charObjetivo);
-                        costoTotal += COSTO_INSERT;
-                        j++;
-                    } else {
-                        operaciones.add("delete (costo " + COSTO_DELETE + ")");
-                        fuente = delete(fuente, i);
-                        costoTotal += COSTO_DELETE;
-                        i++;
+                    String operacion = seleccionarOperacion(costoReplace, costoInsert, costoDelete);
+                    switch (operacion) {
+                        case "replace":
+                            operaciones.add("replace '" + charObjetivo + "' (costo " + COSTO_REPLACE + ")");
+                            fuenteBuilder.setCharAt(i, charObjetivo);
+                            costoTotal += COSTO_REPLACE;
+                            i++;
+                            j++;
+                            break;
+                        case "insert":
+                            operaciones.add("insert '" + charObjetivo + "' (costo " + COSTO_INSERT + ")");
+                            fuenteBuilder.insert(i, charObjetivo);
+                            costoTotal += COSTO_INSERT;
+                            j++;
+                            break;
+                        case "delete":
+                            operaciones.add("delete (costo " + COSTO_DELETE + ")");
+                            fuenteBuilder.deleteCharAt(i);
+                            costoTotal += COSTO_DELETE;
+                            break;
                     }
                 }
-            } else if (i < fuente.length()) {
-                // Si quedan caracteres en la fuente, usar kill
+            } else if (i < fuenteBuilder.length()) {
                 operaciones.add("kill (costo " + COSTO_KILL + ")");
                 costoTotal += COSTO_KILL;
                 break;
             } else {
-                // Si quedan caracteres en la cadena objetivo
                 operaciones.add("insert '" + objetivo.charAt(j) + "' (costo " + COSTO_INSERT + ")");
-                fuente = insert(fuente, i, objetivo.charAt(j));
+                fuenteBuilder.append(objetivo.charAt(j));
                 costoTotal += COSTO_INSERT;
                 j++;
             }
         }
 
-        // Imprimir la secuencia de operaciones y sus costos
-        imprimirOperaciones(operaciones);
+        // Guardar las operaciones en el StringBuilder para mostrar en la interfaz
+        logOperaciones.append("Secuencia de operaciones y costos:\n");
+        for (String operacion : operaciones) {
+            logOperaciones.append(operacion).append("\n");
+        }
 
         return costoTotal;
     }
 
-    private static String delete(String estado, int indice) {
-        StringBuilder stringBuilder = new StringBuilder(estado);
-        stringBuilder.deleteCharAt(indice);
-        return stringBuilder.toString();
-    }
-
-    private static String replace(String estado, int indice, char letra) {
-        StringBuilder stringBuilder = new StringBuilder(estado);
-        stringBuilder.setCharAt(indice, letra);
-        return stringBuilder.toString();
-    }
-
-    private static String insert(String estado, int indice, char letra) {
-        StringBuilder stringBuilder = new StringBuilder(estado);
-        if (indice >= estado.length()) {
-            stringBuilder.append(letra);
+    private static String seleccionarOperacion(int costoReplace, int costoInsert, int costoDelete) {
+        if (costoReplace <= costoInsert && costoReplace <= costoDelete) {
+            return "replace";
+        } else if (costoInsert < costoDelete) {
+            return "insert";
         } else {
-            stringBuilder.insert(indice, letra);
-        }
-        return stringBuilder.toString();
-    }
-
-    private static void imprimirOperaciones(List<String> operaciones) {
-        System.out.println("Secuencia de operaciones y costos:");
-        for (String operacion : operaciones) {
-            System.out.println(operacion);
+            return "delete";
         }
     }
 }

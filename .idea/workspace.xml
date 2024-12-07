@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa822252-410a-4b46-adce-3364299eaf13" name="Changes" comment="Feat: config on transformacion">
+    <list default="true" id="aa822252-410a-4b46-adce-3364299eaf13" name="Changes" comment="Feat: config in GUI">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/adaproject/terminal/ResultadoDinamica.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/adaproject/SubastaGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/adaproject/SubastaGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/adaproject/TerminalGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/adaproject/TerminalGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/adaproject/terminal/TransformacionDinamica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/adaproject/terminal/TransformacionDinamica.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/adaproject/terminal/TransformadorVoraz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/adaproject/terminal/TransformadorVoraz.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,33 +54,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.SubastaGUI.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TerminalGUI.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TransformacionDinamica.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TransformadorVoraz.executor&quot;: &quot;Run&quot;,
-    &quot;Application.org.example.TransformacionDinamica.executor&quot;: &quot;Run&quot;,
-    &quot;Application.org.example.TransformadorVoraz.executor&quot;: &quot;Run&quot;,
-    &quot;Application.org.example.adaproject.terminal.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.parte2.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.prueba.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;devhoyos&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/juanhoyos/proyectos/pruebas/proyectoAda/src/main/java/org/example/Main.java&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Application.SubastaGUI.executor": "Run",
+    "Application.TerminalGUI.executor": "Run",
+    "Application.TransformacionDinamica.executor": "Debug",
+    "Application.TransformadorVoraz.executor": "Run",
+    "Application.org.example.TransformacionDinamica.executor": "Run",
+    "Application.org.example.TransformadorVoraz.executor": "Run",
+    "Application.org.example.adaproject.terminal.Main.executor": "Run",
+    "Application.parte2.Main.executor": "Run",
+    "Application.prueba.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "devhoyos",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "/Users/juanhoyos/proyectos/pruebas/proyectoAda/src/main/java/org/example/Main.java",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "show.migrate.to.gradle.popup": "false"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Application.TerminalGUI">
     <configuration name="SubastaGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.adaproject.SubastaGUI" />
@@ -214,6 +218,7 @@
       <workItem from="1732932462431" duration="8369000" />
       <workItem from="1733071694466" duration="2881000" />
       <workItem from="1733365723137" duration="6810000" />
+      <workItem from="1733422371663" duration="17054000" />
     </task>
     <task id="LOCAL-00001" summary="example">
       <option name="closed" value="true" />
@@ -295,7 +300,23 @@
       <option name="project" value="LOCAL" />
       <updated>1733366105838</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Feat: config in GUI">
+      <option name="closed" value="true" />
+      <created>1733422432883</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1733422432883</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Feat: config in GUI">
+      <option name="closed" value="true" />
+      <created>1733422484757</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1733422484757</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -320,7 +341,8 @@
     <MESSAGE value="Feat: readme" />
     <MESSAGE value="Feat: config in UI" />
     <MESSAGE value="Feat: config on transformacion" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat: config on transformacion" />
+    <MESSAGE value="Feat: config in GUI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat: config in GUI" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

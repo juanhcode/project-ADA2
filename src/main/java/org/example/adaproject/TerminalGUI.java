@@ -10,6 +10,9 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import org.example.adaproject.terminal.Arbol;
+import org.example.adaproject.terminal.ResultadoDinamica;
+import org.example.adaproject.terminal.TransformacionDinamica;
+import org.example.adaproject.terminal.TransformadorVoraz;
 
 public class TerminalGUI extends Application {
 
@@ -215,6 +218,70 @@ public class TerminalGUI extends Application {
 
                     // Ejecutar búsqueda
                     areaResultados.setText("Resultados del proceso: " + arbol.busquedaAmplitud());
+                }
+
+                if (isDinamicaSelected) {
+                    try {
+                        ResultadoDinamica resultadoDinamico = TransformacionDinamica.ejecutarTransformacion(
+                                cadenaInicial,
+                                cadenaFinal,
+                                costoAvanzar,
+                                costoBorrar,
+                                costoReemplazar,
+                                costoInsertar,
+                                costoEliminarFinal
+                        );
+
+                        StringBuilder matrizCostosString = new StringBuilder("Matriz de Costos:\n");
+
+                        // Obtener la matriz de costos
+                        int[][] matrizCostos = resultadoDinamico.getMatrizCostos();
+
+                        // Encabezados de columnas
+                        matrizCostosString.append("     "); // Espacio para alinear filas
+                        for (char c : cadenaFinal.toCharArray()) {
+                            matrizCostosString.append(String.format("%4s", c)).append(" ");
+                        }
+                        matrizCostosString.append("\n");
+
+                        // Contenido de la matriz con encabezados de filas
+                        for (int i = 0; i < matrizCostos.length; i++) {
+                            if (i < cadenaInicial.length()) {
+                                matrizCostosString.append(String.format("%4s", cadenaInicial.charAt(i)));
+                            } else {
+                                matrizCostosString.append("    "); // Espaciado vacío si hay más filas que caracteres
+                            }
+                            for (int j = 0; j < matrizCostos[i].length; j++) {
+                                matrizCostosString.append(String.format("%4d", matrizCostos[i][j])).append(" ");
+                            }
+                            matrizCostosString.append("\n");
+                        }
+
+                        // Mostrar el resultado en el área de texto
+                        areaResultados.setText(resultadoDinamico.getResultado() + "\n\n" + matrizCostosString);
+                    } catch (Exception e) {
+                        areaResultados.setText("Ocurrió un error al ejecutar la programación dinámica: " + e.getMessage());
+                    }
+                }
+
+                if (checkboxVoraz.isSelected()) {
+                    // Actualizar costos en TransformadorVoraz
+                    TransformadorVoraz.COSTO_ADVANCE = costoAvanzar;
+                    TransformadorVoraz.COSTO_DELETE = costoBorrar;
+                    TransformadorVoraz.COSTO_REPLACE = costoReemplazar;
+                    TransformadorVoraz.COSTO_INSERT = costoInsertar;
+                    TransformadorVoraz.COSTO_KILL = costoEliminarFinal;
+
+                    // Crear un StringBuilder para almacenar el log de las operaciones
+                    StringBuilder logOperaciones = new StringBuilder();
+
+                    // Ejecutar transformación Voraz
+                    int costoTotal = TransformadorVoraz.transformar(cadenaInicial, cadenaFinal, logOperaciones);
+
+                    // Mostrar el resultado en el área de texto
+                    areaResultados.setText("Resultado del algoritmo Voraz:\n");
+                    areaResultados.appendText("Costo total: " + costoTotal + "\n\n");
+                    areaResultados.appendText(logOperaciones.toString());
                 }
 
 

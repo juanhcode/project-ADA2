@@ -103,4 +103,30 @@ public class TransformacionDinamica {
         }
         return costos;
     }
+
+    public static ResultadoDinamica ejecutarTransformacion(String source, String target, int avanzar, int borrar, int reemplazar, int insertar, int eliminar) {
+        int n = source.length();
+        int m = target.length();
+        int[][] dp = new int[n + 1][m + 1];
+
+        // Inicializar la matriz
+        for (int i = 0; i <= n; i++) {
+            for (int j = 0; j <= m; j++) {
+                if (i == 0) {
+                    dp[i][j] = j * insertar;
+                } else if (j == 0) {
+                    dp[i][j] = i * borrar;
+                } else {
+                    int costoReemplazo = source.charAt(i - 1) == target.charAt(j - 1) ? 0 : reemplazar;
+                    dp[i][j] = Math.min(dp[i - 1][j] + borrar,
+                            Math.min(dp[i][j - 1] + insertar,
+                                    dp[i - 1][j - 1] + costoReemplazo));
+                }
+            }
+        }
+
+        String resultado = "Costo mínimo para transformar '" + source + "' en '" + target + "' es: " + dp[n][m];
+        return new ResultadoDinamica(resultado, dp);
+    }
+
 }
