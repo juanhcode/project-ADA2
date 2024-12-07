@@ -176,7 +176,16 @@ public class TerminalGUI extends Application {
                         "-fx-border-radius: 5px; "            // Bordes redondeados
         );
 
-        botones.getChildren().addAll(botonEjecutar, botonLimpiar);
+        Button botonGraficas = new Button(" Ver graficas");
+        botonGraficas.setStyle(
+                "-fx-background-color: rgba(255,204,0,0.94); " +   // Naranja vibrante
+                        "-fx-font-weight: bold; " +            // Texto en negrita
+                        "-fx-text-fill: white; " +             // Texto blanco
+                        "-fx-padding: 10px 20px; " +           // Padding adecuado
+                        "-fx-border-radius: 5px; "            // Bordes redondeados
+        );
+
+        botones.getChildren().addAll(botonEjecutar, botonLimpiar, botonGraficas);
 // crear el textarea de procesos
         TextArea areaResultados = new TextArea();
         areaResultados.setEditable(false);
@@ -299,6 +308,10 @@ public class TerminalGUI extends Application {
             campoInsertar.clear();
             campoEliminarFinal.clear();
             areaResultados.clear();
+        });
+
+        botonGraficas.setOnAction(event -> {
+
         });
 
         // Crear y organizar el layout principal
