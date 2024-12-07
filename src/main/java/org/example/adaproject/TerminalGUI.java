@@ -4,6 +4,10 @@ import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -310,8 +314,88 @@ public class TerminalGUI extends Application {
         });
 
         botonGraficas.setOnAction(event -> {
+            try {
+                String cadenaInicial = campoCadenaInicial.getText();
+                String cadenaFinal = campoCadenaFinal.getText();
 
+                // Capturar los costos ingresados
+                int costoAvanzar = Integer.parseInt(campoAvanzar.getText());
+                int costoBorrar = Integer.parseInt(campoBorrar.getText());
+                int costoReemplazar = Integer.parseInt(campoReemplazar.getText());
+                int costoInsertar = Integer.parseInt(campoInsertar.getText());
+                int costoEliminarFinal = Integer.parseInt(campoEliminarFinal.getText());
+
+                // Crear el dataset para la gráfica
+                XYChart.Series<String, Number> serieFuerzaBruta = new XYChart.Series<>();
+                serieFuerzaBruta.setName("Fuerza Bruta");
+
+                XYChart.Series<String, Number> serieDinamica = new XYChart.Series<>();
+                serieDinamica.setName("Dinámica");
+
+                XYChart.Series<String, Number> serieVoraz = new XYChart.Series<>();
+                serieVoraz.setName("Voraz");
+
+                // Generar los datos según los algoritmos seleccionados
+                if (checkboxFuerzaBruta.isSelected()) {
+                    for (int i = 0; i < 10; i++) { // Simulando 10 ejecuciones
+                        long startTime = System.nanoTime();
+                        // Simular lógica de Fuerza Bruta aquí
+                        long endTime = System.nanoTime();
+                        double duration = (endTime - startTime) / 1_000_000.0;
+                        serieFuerzaBruta.getData().add(new XYChart.Data<>("Ejecución " + (i + 1), duration));
+                    }
+                }
+
+                if (checkboxDinamica.isSelected()) {
+                    for (int i = 0; i < 10; i++) {
+                        long startTime = System.nanoTime();
+                        // Simular lógica de Dinámica aquí
+                        long endTime = System.nanoTime();
+                        double duration = (endTime - startTime) / 1_000_000.0;
+                        serieDinamica.getData().add(new XYChart.Data<>("Ejecución " + (i + 1), duration));
+                    }
+                }
+
+                if (checkboxVoraz.isSelected()) {
+                    for (int i = 0; i < 10; i++) {
+                        long startTime = System.nanoTime();
+                        // Simular lógica de Voraz aquí
+                        long endTime = System.nanoTime();
+                        double duration = (endTime - startTime) / 1_000_000.0;
+                        serieVoraz.getData().add(new XYChart.Data<>("Ejecución " + (i + 1), duration));
+                    }
+                }
+
+                // Crear e inicializar la gráfica
+                CategoryAxis xAxis = new CategoryAxis();
+                xAxis.setLabel("Ejecuciones");
+
+                NumberAxis yAxis = new NumberAxis();
+                yAxis.setLabel("Tiempo (ms)");
+
+                LineChart<String, Number> lineChart = new LineChart<>(xAxis, yAxis);
+                lineChart.setTitle("Comparación de Tiempos por Algoritmo");
+
+                // Agregar las series a la gráfica
+                if (!serieFuerzaBruta.getData().isEmpty()) lineChart.getData().add(serieFuerzaBruta);
+                if (!serieDinamica.getData().isEmpty()) lineChart.getData().add(serieDinamica);
+                if (!serieVoraz.getData().isEmpty()) lineChart.getData().add(serieVoraz);
+
+                // Mostrar la gráfica en una nueva ventana
+                VBox vbox = new VBox(lineChart);
+                vbox.setPadding(new Insets(10));
+                Scene scene = new Scene(vbox, 800, 600);
+
+                Stage stage = new Stage();
+                stage.setTitle("Gráfica de Comparación de Algoritmos");
+                stage.setScene(scene);
+                stage.show();
+
+            } catch (NumberFormatException e) {
+                areaResultados.setText("Error: Ingrese valores numéricos válidos para los costos.");
+            }
         });
+
 
         // Crear y organizar el layout principal
         VBox layout = new VBox(20);
@@ -333,4 +417,50 @@ public class TerminalGUI extends Application {
         primaryStage.setTitle("Terminal Inteligente");
         primaryStage.show();
     }
+
+    private void mostrarGraficaDinamica() {
+        Stage graficaStage = new Stage();
+        graficaStage.setTitle("Gráfica Dinámica");
+
+        // Crear ejes
+        CategoryAxis xAxis = new CategoryAxis();
+        xAxis.setLabel("Operaciones");
+
+        NumberAxis yAxis = new NumberAxis();
+        yAxis.setLabel("Costo");
+
+        // Crear la gráfica
+        LineChart<String, Number> grafica = new LineChart<>(xAxis, yAxis);
+        grafica.setTitle("Resultados de Programación Dinámica");
+
+        // Crear la serie de datos
+        XYChart.Series<String, Number> datos = new XYChart.Series<>();
+        datos.setName("Costo por Operación");
+
+        // Agregar puntos de datos (simulado aquí)
+        datos.getData().add(new XYChart.Data<>("Avanzar", 10));
+        datos.getData().add(new XYChart.Data<>("Borrar", 20));
+        datos.getData().add(new XYChart.Data<>("Reemplazar", 15));
+        datos.getData().add(new XYChart.Data<>("Insertar", 25));
+        datos.getData().add(new XYChart.Data<>("Eliminar", 30));
+
+        // Agregar los datos a la gráfica
+        grafica.getData().add(datos);
+
+        // Mostrar la gráfica en un Scene
+        VBox root = new VBox(grafica);
+        Scene scene = new Scene(root, 800, 600);
+        graficaStage.setScene(scene);
+        graficaStage.show();
+    }
+
+    private void mostrarMensaje(String mensaje) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Información");
+        alert.setHeaderText(null);
+        alert.setContentText(mensaje);
+        alert.showAndWait();
+    }
+
+
 }
