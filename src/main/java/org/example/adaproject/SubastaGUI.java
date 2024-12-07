@@ -123,15 +123,33 @@ public class SubastaGUI extends Application {
 
         // Botón para agregar oferentes
         Button botonAgregarOferente = new Button("Agregar Oferente");
-        botonAgregarOferente.setStyle("-fx-background-color: #FFD700; -fx-font-size: 16px; -fx-font-weight: bold;");
+        botonAgregarOferente.setStyle(
+                "-fx-background-color: #7037d8; " +   // Verde brillante
+                        "-fx-font-weight: bold; " +            // Texto en negrita
+                        "-fx-text-fill: white; " +             // Texto blanco
+                        "-fx-padding: 10px 20px; " +           // Padding adecuado
+                        "-fx-border-radius: 5px; "            // Bordes redondeados
+        );
 
         // Botón para quitar oferentes
         Button botonQuitarOferente = new Button("Quitar Oferente");
-        botonQuitarOferente.setStyle("-fx-background-color: #FF4500; -fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: white;");
+        botonQuitarOferente.setStyle(
+                "-fx-background-color: #3297cd; " +   // Verde brillante
+                        "-fx-font-weight: bold; " +            // Texto en negrita
+                        "-fx-text-fill: white; " +             // Texto blanco
+                        "-fx-padding: 10px 20px; " +           // Padding adecuado
+                        "-fx-border-radius: 5px; "            // Bordes redondeados
+        );
 
         // Botones "Ejecutar" y "Limpiar"
         Button botonEjecutar = new Button("Ejecutar");
-        botonEjecutar.setStyle("-fx-background-color: #32CD32; -fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: white;");
+        botonEjecutar.setStyle(
+                "-fx-background-color: #32CD32; " +   // Verde brillante
+                        "-fx-font-weight: bold; " +            // Texto en negrita
+                        "-fx-text-fill: white; " +             // Texto blanco
+                        "-fx-padding: 10px 20px; " +           // Padding adecuado
+                        "-fx-border-radius: 5px; "            // Bordes redondeados
+        );
 
 
         botonEjecutar.setOnAction(event -> {
@@ -188,7 +206,22 @@ public class SubastaGUI extends Application {
 
 
         Button botonLimpiar = new Button("Limpiar");
-        botonLimpiar.setStyle("-fx-background-color: #FF6347; -fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: white;");
+        botonLimpiar.setStyle(
+                "-fx-background-color: #FF6347; " +   // Naranja vibrante
+                        "-fx-font-weight: bold; " +            // Texto en negrita
+                        "-fx-text-fill: white; " +             // Texto blanco
+                        "-fx-padding: 10px 20px; " +           // Padding adecuado
+                        "-fx-border-radius: 5px; "            // Bordes redondeados
+        );
+
+        Button botonGraficas = new Button("Ver graficas");
+        botonGraficas.setStyle(
+                "-fx-background-color: rgba(255,204,0,0.94); " +   // Naranja vibrante
+                        "-fx-font-weight: bold; " +            // Texto en negrita
+                        "-fx-text-fill: white; " +             // Texto blanco
+                        "-fx-padding: 10px 20px; " +           // Padding adecuado
+                        "-fx-border-radius: 5px; "            // Bordes redondeados
+        );
 
         // Layout para los botones de acción
         HBox hBoxBotones = new HBox(20, botonAgregarOferente, botonQuitarOferente, botonEjecutar, botonLimpiar);
