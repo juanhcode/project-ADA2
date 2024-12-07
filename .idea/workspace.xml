@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa822252-410a-4b46-adce-3364299eaf13" name="Changes" comment="Feat: config in GUI">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/adaproject/terminal/ResultadoDinamica.java" afterDir="false" />
+    <list default="true" id="aa822252-410a-4b46-adce-3364299eaf13" name="Changes" comment="Feat: config in GUI subasta">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/adaproject/SubastaGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/adaproject/SubastaGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/adaproject/TerminalGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/adaproject/TerminalGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/adaproject/terminal/TransformacionDinamica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/adaproject/terminal/TransformacionDinamica.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/adaproject/terminal/TransformadorVoraz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/adaproject/terminal/TransformadorVoraz.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,8 +79,10 @@
 }]]></component>
   <component name="RunManager" selected="Application.TerminalGUI">
     <configuration name="SubastaGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="org.example.adaproject.SubastaGUI" />
-      <module name="proyectoAda" />
+      <module name="adaproject" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.adaproject.*" />
@@ -163,9 +161,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.TerminalGUI" />
+        <item itemvalue="Application.SubastaGUI" />
         <item itemvalue="Application.TransformacionDinamica" />
         <item itemvalue="Application.org.example.adaproject.terminal.Main" />
-        <item itemvalue="Application.SubastaGUI" />
         <item itemvalue="Application.TransformadorVoraz" />
       </list>
     </recent_temporary>
@@ -218,7 +216,7 @@
       <workItem from="1732932462431" duration="8369000" />
       <workItem from="1733071694466" duration="2881000" />
       <workItem from="1733365723137" duration="6810000" />
-      <workItem from="1733422371663" duration="17054000" />
+      <workItem from="1733422371663" duration="18653000" />
     </task>
     <task id="LOCAL-00001" summary="example">
       <option name="closed" value="true" />
@@ -316,7 +314,23 @@
       <option name="project" value="LOCAL" />
       <updated>1733422484757</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Feat: config in GUI and checkbox">
+      <option name="closed" value="true" />
+      <created>1733537599724</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1733537599724</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Feat: config in GUI subasta">
+      <option name="closed" value="true" />
+      <created>1733537667255</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1733537667255</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -342,7 +356,9 @@
     <MESSAGE value="Feat: config in UI" />
     <MESSAGE value="Feat: config on transformacion" />
     <MESSAGE value="Feat: config in GUI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat: config in GUI" />
+    <MESSAGE value="Feat: config in GUI and checkbox" />
+    <MESSAGE value="Feat: config in GUI subasta" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat: config in GUI subasta" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
