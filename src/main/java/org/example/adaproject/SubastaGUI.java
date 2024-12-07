@@ -3,6 +3,10 @@ package org.example.adaproject;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
@@ -53,10 +57,18 @@ public class SubastaGUI extends Application {
 
         // Crear el TextArea debajo de los CheckBox
         TextArea textAreaInfo = new TextArea();
-        textAreaInfo.setPromptText("Resultado...");
-        textAreaInfo.setStyle("-fx-font-size: 14px; -fx-font-family: 'Segoe UI';");
+        textAreaInfo.setPromptText("Resultados");
+        // Aumentar tamaño de la fuente, hacer el fondo oscuro y el texto negro
+        textAreaInfo.setStyle("-fx-background-color: #333333; " +  // Fondo oscuro
+                "-fx-text-fill: black; " +            // Texto en negro
+                "-fx-font-size: 16px; " +             // Aumentar tamaño de la fuente
+                "-fx-border-color: #777777; " +      // Color del borde
+                "-fx-padding: 10;"                    // Espaciado interno
+        );
         textAreaInfo.setPrefHeight(100);
         textAreaInfo.setWrapText(true);
+        textAreaInfo.setEditable(false);
+
 
         // Crear un contenedor dinámico para oferentes
         VBox contenedorOferentes = new VBox(15);
@@ -64,7 +76,7 @@ public class SubastaGUI extends Application {
         // Contador para los oferentes
         AtomicInteger contadorOferentes = new AtomicInteger(1);
 
-        // Método para agregar un oferente
+        // agregar oferente
         Runnable agregarOferente = () -> {
             int numeroOferente = contadorOferentes.getAndIncrement();
             Label tituloOferente = new Label("Oferente " + numeroOferente + ":");
@@ -93,7 +105,7 @@ public class SubastaGUI extends Application {
             contenedorOferentes.getChildren().add(contenedorIndividual);
         };
 
-        // Método para quitar el último oferente
+        // quitar oferente
         Runnable quitarOferente = () -> {
             int totalOferentes = contenedorOferentes.getChildren().size();
             if (totalOferentes > 0) {
@@ -115,15 +127,35 @@ public class SubastaGUI extends Application {
 
         // Botón para agregar oferentes
         Button botonAgregarOferente = new Button("Agregar Oferente");
-        botonAgregarOferente.setStyle("-fx-background-color: #FFD700; -fx-font-size: 16px; -fx-font-weight: bold;");
+        botonAgregarOferente.setStyle(
+                "-fx-background-color: #7037d8; " +   // Verde brillante
+                        "-fx-font-weight: bold; " +            // Texto en negrita
+                        "-fx-text-fill: white; " +             // Texto blanco
+                        "-fx-padding: 10px 20px; " +           // Padding adecuado
+                        "-fx-border-radius: 5px; "            // Bordes redondeados
+        );
 
         // Botón para quitar oferentes
         Button botonQuitarOferente = new Button("Quitar Oferente");
-        botonQuitarOferente.setStyle("-fx-background-color: #FF4500; -fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: white;");
+        botonQuitarOferente.setStyle(
+                "-fx-background-color: #3297cd; " +   // Verde brillante
+                        "-fx-font-weight: bold; " +            // Texto en negrita
+                        "-fx-text-fill: white; " +             // Texto blanco
+                        "-fx-padding: 10px 20px; " +           // Padding adecuado
+                        "-fx-border-radius: 5px; "            // Bordes redondeados
+        );
 
         // Botones "Ejecutar" y "Limpiar"
         Button botonEjecutar = new Button("Ejecutar");
-        botonEjecutar.setStyle("-fx-background-color: #32CD32; -fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: white;");
+        botonEjecutar.setStyle(
+                "-fx-background-color: #32CD32; " +   // Verde brillante
+                        "-fx-font-weight: bold; " +            // Texto en negrita
+                        "-fx-text-fill: white; " +             // Texto blanco
+                        "-fx-padding: 10px 20px; " +           // Padding adecuado
+                        "-fx-border-radius: 5px; "            // Bordes redondeados
+        );
+
+
 
 
         botonEjecutar.setOnAction(event -> {
@@ -180,10 +212,117 @@ public class SubastaGUI extends Application {
 
 
         Button botonLimpiar = new Button("Limpiar");
-        botonLimpiar.setStyle("-fx-background-color: #FF6347; -fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: white;");
+        botonLimpiar.setStyle(
+                "-fx-background-color: #FF6347; " +   // Naranja vibrante
+                        "-fx-font-weight: bold; " +            // Texto en negrita
+                        "-fx-text-fill: white; " +             // Texto blanco
+                        "-fx-padding: 10px 20px; " +           // Padding adecuado
+                        "-fx-border-radius: 5px; "            // Bordes redondeados
+        );
+
+        Button botonGraficas = new Button("Ver graficas");
+        botonGraficas.setStyle(
+                "-fx-background-color: rgba(255,204,0,0.94); " +   // Naranja vibrante
+                        "-fx-font-weight: bold; " +            // Texto en negrita
+                        "-fx-text-fill: white; " +             // Texto blanco
+                        "-fx-padding: 10px 20px; " +           // Padding adecuado
+                        "-fx-border-radius: 5px; "            // Bordes redondeados
+        );
+
+        botonGraficas.setOnAction(event -> {
+            try {
+                // Número total de acciones (puedes cambiar este valor si es configurable)
+                int A = 200;
+
+                // Crear la lista de Tripletas a partir de los campos ingresados por el usuario
+                List<Tripleta> tripletaList = new ArrayList<>();
+                for (int i = 0; i < contenedorOferentes.getChildren().size(); i++) {
+                    VBox oferenteBox = (VBox) contenedorOferentes.getChildren().get(i);
+                    HBox inputs = (HBox) oferenteBox.getChildren().get(1);
+                    TextField precioField = (TextField) inputs.getChildren().get(0);
+                    TextField minimoField = (TextField) inputs.getChildren().get(1);
+                    TextField maximoField = (TextField) inputs.getChildren().get(2);
+
+                    int precio = Integer.parseInt(precioField.getText());
+                    int minimo = Integer.parseInt(minimoField.getText());
+                    int maximo = Integer.parseInt(maximoField.getText());
+
+                    tripletaList.add(new Tripleta(precio, minimo, maximo));
+                }
+
+                // Crear las series para los gráficos
+                XYChart.Series<String, Number> serieVoraz = new XYChart.Series<>();
+                serieVoraz.setName("Voraz");
+
+                XYChart.Series<String, Number> serieBruta = new XYChart.Series<>();
+                serieBruta.setName("Bruta");
+
+                XYChart.Series<String, Number> serieDinamica = new XYChart.Series<>();
+                serieDinamica.setName("Dinámica");
+
+                // Calcular tiempos para cada algoritmo
+                if (checkBoxVoraz.isSelected()) {
+                    for (int i = 0; i < 10; i++) {
+                        long startTime = System.nanoTime();
+                        Voraz.combinaciones(tripletaList, A);
+                        long endTime = System.nanoTime();
+                        double duration = (endTime - startTime) / 1_000_000.0;
+                        serieVoraz.getData().add(new XYChart.Data<>("Ejecución " + (i + 1), duration));
+                    }
+                }
+
+                if (checkBoxBruta.isSelected()) {
+                    for (int i = 0; i < 10; i++) {
+                        long startTime = System.nanoTime();
+                        Main.combinaciones(tripletaList, A);
+                        long endTime = System.nanoTime();
+                        double duration = (endTime - startTime) / 1_000_000.0;
+                        serieBruta.getData().add(new XYChart.Data<>("Ejecución " + (i + 1), duration));
+                    }
+                }
+
+                if (checkBoxDinamica.isSelected()) {
+                    for (int i = 0; i < 10; i++) {
+                        long startTime = System.nanoTime();
+                        Dinamica.combinaciones(tripletaList, A);
+                        long endTime = System.nanoTime();
+                        double duration = (endTime - startTime) / 1_000_000.0;
+                        serieDinamica.getData().add(new XYChart.Data<>("Ejecución " + (i + 1), duration));
+                    }
+                }
+
+                // Crear e inicializar la gráfica
+                CategoryAxis xAxis = new CategoryAxis();
+                xAxis.setLabel("Ejecuciones");
+
+                NumberAxis yAxis = new NumberAxis();
+                yAxis.setLabel("Tiempo (ms)");
+
+                LineChart<String, Number> lineChart = new LineChart<>(xAxis, yAxis);
+                lineChart.setTitle("Comparación de Tiempos por Algoritmo");
+
+                // Agregar las series a la gráfica
+                if (!serieVoraz.getData().isEmpty()) lineChart.getData().add(serieVoraz);
+                if (!serieBruta.getData().isEmpty()) lineChart.getData().add(serieBruta);
+                if (!serieDinamica.getData().isEmpty()) lineChart.getData().add(serieDinamica);
+
+                // Mostrar la gráfica en una nueva ventana
+                VBox vbox = new VBox(lineChart);
+                vbox.setPadding(new Insets(10));
+                Scene scene = new Scene(vbox, 800, 600);
+
+                Stage stage = new Stage();
+                stage.setTitle("Gráfica de Comparación de Algoritmos");
+                stage.setScene(scene);
+                stage.show();
+
+            } catch (NumberFormatException e) {
+                textAreaInfo.setText("Error: Ingrese valores numéricos válidos en los campos.");
+            }
+        });
 
         // Layout para los botones de acción
-        HBox hBoxBotones = new HBox(20, botonAgregarOferente, botonQuitarOferente, botonEjecutar, botonLimpiar);
+        HBox hBoxBotones = new HBox(20, botonAgregarOferente, botonQuitarOferente, botonEjecutar, botonLimpiar, botonGraficas);
         hBoxBotones.setPadding(new Insets(15));
         hBoxBotones.setStyle("-fx-alignment: center;");
 
@@ -195,6 +334,7 @@ public class SubastaGUI extends Application {
             contadorOferentes.set(1);
             agregarOferente.run();
             agregarOferente.run();
+            textAreaInfo.clear();
         });
 
         // Crear layout principal
