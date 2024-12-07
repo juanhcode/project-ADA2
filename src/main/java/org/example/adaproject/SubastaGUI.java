@@ -7,7 +7,13 @@ import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import org.example.adaproject.subasta.Dinamica;
+import org.example.adaproject.subasta.Main;
+import org.example.adaproject.subasta.Tripleta;
+import org.example.adaproject.subasta.Voraz;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class SubastaGUI extends Application {
@@ -38,6 +44,8 @@ public class SubastaGUI extends Application {
         CheckBox checkBoxBruta = new CheckBox("Bruta");
         checkBoxBruta.setStyle("-fx-font-size: 16px; -fx-text-fill: white;");
 
+
+
         // Contenedor para los CheckBox
         HBox hBoxCheckBoxes = new HBox(20, checkBoxDinamica, checkBoxVoraz, checkBoxBruta);
         hBoxCheckBoxes.setPadding(new Insets(10));
@@ -45,7 +53,7 @@ public class SubastaGUI extends Application {
 
         // Crear el TextArea debajo de los CheckBox
         TextArea textAreaInfo = new TextArea();
-        textAreaInfo.setPromptText("Escribe aquí información adicional...");
+        textAreaInfo.setPromptText("Resultado...");
         textAreaInfo.setStyle("-fx-font-size: 14px; -fx-font-family: 'Segoe UI';");
         textAreaInfo.setPrefHeight(100);
         textAreaInfo.setWrapText(true);
@@ -116,6 +124,60 @@ public class SubastaGUI extends Application {
         // Botones "Ejecutar" y "Limpiar"
         Button botonEjecutar = new Button("Ejecutar");
         botonEjecutar.setStyle("-fx-background-color: #32CD32; -fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: white;");
+
+
+        botonEjecutar.setOnAction(event -> {
+            try {
+                // Número total de acciones (puedes cambiar este valor si es configurable)
+                int A = 200;
+
+                // Crear la lista de Tripletas a partir de los campos ingresados por el usuario
+                List<Tripleta> tripletaList = new ArrayList<>();
+                for (int i = 0; i < contenedorOferentes.getChildren().size(); i++) {
+                    VBox oferenteBox = (VBox) contenedorOferentes.getChildren().get(i);
+                    HBox inputs = (HBox) oferenteBox.getChildren().get(1);
+                    TextField precioField = (TextField) inputs.getChildren().get(0);
+                    TextField minimoField = (TextField) inputs.getChildren().get(1);
+                    TextField maximoField = (TextField) inputs.getChildren().get(2);
+
+                    // Parsear los valores de los campos
+                    int precio = Integer.parseInt(precioField.getText());
+                    int minimo = Integer.parseInt(minimoField.getText());
+                    int maximo = Integer.parseInt(maximoField.getText());
+
+                    tripletaList.add(new Tripleta(precio, minimo, maximo));
+                }
+
+                // Verificar qué algoritmo fue seleccionado
+                if (checkBoxVoraz.isSelected()) {
+                    int maxGanancia = Voraz.combinaciones(tripletaList, A);
+                    textAreaInfo.setText("Ganancia máxima usando algoritmo Voraz: " + maxGanancia);
+                } else if (checkBoxBruta.isSelected()) {
+                    int maxGanancia = Main.combinaciones(tripletaList, A);
+                    textAreaInfo.setText("Ganancia máxima usando algoritmo Bruto: " + maxGanancia);
+                } else if (checkBoxDinamica.isSelected()) {
+                    int maxGanancia = Dinamica.combinaciones(tripletaList, A);
+                    textAreaInfo.setText("Ganancia máxima usando algoritmo Dinámico: " + maxGanancia);
+                } else {
+                    // Si no hay CheckBox seleccionado, muestra una alerta
+                    Alert alerta = new Alert(Alert.AlertType.WARNING);
+                    alerta.setTitle("Advertencia");
+                    alerta.setHeaderText(null);
+                    alerta.setContentText("Por favor, selecciona un método antes de ejecutar.");
+                    alerta.showAndWait();
+                }
+            } catch (Exception e) {
+                // Manejo de errores en caso de campos vacíos o valores no válidos
+                Alert alerta = new Alert(Alert.AlertType.ERROR);
+                alerta.setTitle("Error");
+                alerta.setHeaderText(null);
+                alerta.setContentText("Por favor, verifica que todos los campos están llenos y contienen valores numéricos válidos.");
+                alerta.showAndWait();
+            }
+        });
+
+
+
 
         Button botonLimpiar = new Button("Limpiar");
         botonLimpiar.setStyle("-fx-background-color: #FF6347; -fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: white;");

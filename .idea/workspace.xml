@@ -7,6 +7,8 @@
     <list default="true" id="aa822252-410a-4b46-adce-3364299eaf13" name="Changes" comment="Feat: config in GUI subasta">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/adaproject/SubastaGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/adaproject/SubastaGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/adaproject/TerminalGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/adaproject/TerminalGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/adaproject/subasta/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/adaproject/subasta/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +79,7 @@
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.TerminalGUI">
+  <component name="RunManager" selected="Application.SubastaGUI">
     <configuration name="SubastaGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -160,8 +162,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TerminalGUI" />
         <item itemvalue="Application.SubastaGUI" />
+        <item itemvalue="Application.TerminalGUI" />
         <item itemvalue="Application.TransformacionDinamica" />
         <item itemvalue="Application.org.example.adaproject.terminal.Main" />
         <item itemvalue="Application.TransformadorVoraz" />
@@ -216,7 +218,7 @@
       <workItem from="1732932462431" duration="8369000" />
       <workItem from="1733071694466" duration="2881000" />
       <workItem from="1733365723137" duration="6810000" />
-      <workItem from="1733422371663" duration="18653000" />
+      <workItem from="1733422371663" duration="21327000" />
     </task>
     <task id="LOCAL-00001" summary="example">
       <option name="closed" value="true" />
@@ -330,7 +332,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733537667255</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Feat: config in GUI subasta">
+      <option name="closed" value="true" />
+      <created>1733538744557</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1733538744557</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -28,7 +28,6 @@ public class TerminalGUI extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-// Crear el título principal
 
         Label tituloPrincipal = new Label("Terminal Inteligente");
         tituloPrincipal.setStyle(
