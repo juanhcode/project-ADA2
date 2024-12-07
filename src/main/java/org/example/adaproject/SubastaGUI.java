@@ -53,10 +53,18 @@ public class SubastaGUI extends Application {
 
         // Crear el TextArea debajo de los CheckBox
         TextArea textAreaInfo = new TextArea();
-        textAreaInfo.setPromptText("Resultado...");
-        textAreaInfo.setStyle("-fx-font-size: 14px; -fx-font-family: 'Segoe UI';");
+        textAreaInfo.setPromptText("Resultados");
+        // Aumentar tamaño de la fuente, hacer el fondo oscuro y el texto negro
+        textAreaInfo.setStyle("-fx-background-color: #333333; " +  // Fondo oscuro
+                "-fx-text-fill: black; " +            // Texto en negro
+                "-fx-font-size: 16px; " +             // Aumentar tamaño de la fuente
+                "-fx-border-color: #777777; " +      // Color del borde
+                "-fx-padding: 10;"                    // Espaciado interno
+        );
         textAreaInfo.setPrefHeight(100);
         textAreaInfo.setWrapText(true);
+        textAreaInfo.setEditable(false);
+
 
         // Crear un contenedor dinámico para oferentes
         VBox contenedorOferentes = new VBox(15);
@@ -64,7 +72,7 @@ public class SubastaGUI extends Application {
         // Contador para los oferentes
         AtomicInteger contadorOferentes = new AtomicInteger(1);
 
-        // Método para agregar un oferente
+        // agregar oferente
         Runnable agregarOferente = () -> {
             int numeroOferente = contadorOferentes.getAndIncrement();
             Label tituloOferente = new Label("Oferente " + numeroOferente + ":");
@@ -93,7 +101,7 @@ public class SubastaGUI extends Application {
             contenedorOferentes.getChildren().add(contenedorIndividual);
         };
 
-        // Método para quitar el último oferente
+        // quitar oferente
         Runnable quitarOferente = () -> {
             int totalOferentes = contenedorOferentes.getChildren().size();
             if (totalOferentes > 0) {
@@ -195,6 +203,7 @@ public class SubastaGUI extends Application {
             contadorOferentes.set(1);
             agregarOferente.run();
             agregarOferente.run();
+            textAreaInfo.clear();
         });
 
         // Crear layout principal
