@@ -1,4 +1,4 @@
-package parte2;
+package org.example.adaproject.subasta;
 
 public class Tripleta {
     private int p;

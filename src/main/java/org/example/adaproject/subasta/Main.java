@@ -1,4 +1,4 @@
-package parte2;
+package org.example.adaproject.subasta;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,17 +36,6 @@ public class Main {
             int index = current[0];
             int acciones = current[1];
             int ganancia = current[2];
-
-//            for (int i = 0; i < stack.size(); i++) {
-//                try {
-//                    Thread.sleep(1);
-//                    System.out.println(stack.get(i)[0] + " " + stack.get(i)[1] + " " + stack.get(i)[2]);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-//
-//            }
-
             if (acciones <= A) {
                 maxGanancia = Math.max(maxGanancia, ganancia);
             }

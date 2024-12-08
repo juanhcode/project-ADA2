@@ -1,4 +1,4 @@
-package parte2;
+package org.example.adaproject.subasta;
 
 import java.util.ArrayList;
 import java.util.Comparator;
