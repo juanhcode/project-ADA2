@@ -46,7 +46,7 @@ public class TransformacionDinamica {
 
             // Agregar los tiempos de ejecución al dataset, con un color distinto por caso
             for (int i = 0; i < tiempos.length; i++) {
-                dataset.addValue(tiempos[i], "Caso " + (caso + 1), "Ejecución " + (i + 1));
+                dataset.addValue(tiempos[i], "Caso " + (caso + 1), "" + (i + 1));
             }
         }
 

@@ -9,37 +9,54 @@ import org.jfree.data.category.DefaultCategoryDataset;
 import javax.swing.*;
 import java.awt.*;
 
-public class Main {
+public class TiempoVoraz {
+
+    // Casos de prueba (fuente, objetivo)
+    private static final String[][] casos = {
+            {"rescue", "secure"},
+            {"abcdef", "fedcba"},
+            {"algorithm", "altruistic"},
+            {"longsourceword", "longtargetword"},
+            {"verylongsourcetext", "verylongtargettext"}
+    };
+
+    // Ejecutar los cálculos y graficar
     public static void main(String[] args) {
-        // Definimos los casos de prueba
-        String[] iniciales = {"rescue", "abcdef", "hola", "hola", "hola"};
-        String[] destinos = {"secure", "fedcba", "hola", "hola", "hola"};
+        // Dataset para almacenar los tiempos de cada ejecución
+        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 
         // Número de ejecuciones por caso
         int ejecuciones = 50;
-        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 
-        // Ejecutar la lógica de transformación dinámica en un hilo separado para no bloquear la interfaz
+        // Configuración de costos
+        TransformadorVoraz.COSTO_ADVANCE = 1;
+        TransformadorVoraz.COSTO_DELETE = 2;
+        TransformadorVoraz.COSTO_REPLACE = 3;
+        TransformadorVoraz.COSTO_INSERT = 4;
+        TransformadorVoraz.COSTO_KILL = 5;
+
+        // Ejecutar la lógica de transformación para cada caso
         SwingUtilities.invokeLater(() -> {
-            for (int caso = 0; caso < iniciales.length; caso++) {
-                String inicial = iniciales[caso];
-                String destino = destinos[caso];
+            for (int caso = 0; caso < casos.length; caso++) {
+                String fuente = casos[caso][0];
+                String objetivo = casos[caso][1];
 
                 double[] tiempos = new double[ejecuciones];
                 double sumaTiempos = 0;
 
                 for (int i = 0; i < ejecuciones; i++) {
                     long startTime = System.nanoTime(); // Tiempo inicial
-                    Arbol arbol = new Arbol(inicial, destino, 2, 4, 5, 1, 7);
-                    arbol.busquedaAmplitud(); // Llamada al método de búsqueda, asegúrate que hace algo
-                    long endTime = System.nanoTime(); // Tiempo final
 
-                    // Calcular tiempo de ejecución en segundos
+                    // Ejecutar el algoritmo de transformación
+                    StringBuilder logOperaciones = new StringBuilder();
+                    int costoTotal = TransformadorVoraz.transformar(fuente, objetivo, logOperaciones);
+
+                    long endTime = System.nanoTime(); // Tiempo final
                     double durationInSeconds = (endTime - startTime) / 1_000_000_000.0;
                     tiempos[i] = durationInSeconds;
                     sumaTiempos += durationInSeconds;
 
-                    // Agregar tiempo al dataset
+                    // Agregar tiempo al dataset para cada ejecución
                     dataset.addValue(durationInSeconds, "Caso " + (caso + 1), "" + (i + 1));
                 }
 
@@ -48,11 +65,12 @@ public class Main {
                 System.out.println("Caso " + (caso + 1) + " - Promedio: " + promedio + " segundos");
             }
 
-            // Crear gráfica después de completar todas las ejecuciones
+            // Crear la gráfica con los resultados de las ejecuciones
             crearGrafica(dataset);
         });
     }
 
+    // Método para crear la gráfica
     public static void crearGrafica(DefaultCategoryDataset dataset) {
         JFreeChart lineChart = ChartFactory.createLineChart(
                 "Tiempos de Ejecución por Caso",
