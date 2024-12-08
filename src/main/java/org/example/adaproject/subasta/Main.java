@@ -5,16 +5,12 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-//        Tripleta t = new Tripleta(500, 100, 600);
-//        Tripleta t2 = new Tripleta(450, 400, 800);
-//        Tripleta t3 = new Tripleta(100, 0, 1000);
         Tripleta t = new Tripleta(50, 20, 50);
         Tripleta t2 = new Tripleta(39, 150, 200);
         Tripleta t3 = new Tripleta(40, 120, 130);
         List<Tripleta> tripletaList = List.of(t, t2, t3);
 
         // Número total de acciones
-//        int A = 1000;
         int A = 200;
         // Precio mínimo de las acciones
         int B = 100;

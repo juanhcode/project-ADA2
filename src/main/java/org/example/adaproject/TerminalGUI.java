@@ -28,6 +28,11 @@ public class TerminalGUI extends Application {
     private String cadenaInicial = "";
     private String cadenaFinal = "";
 
+    /*
+    * Cadena inicial =   algorithm
+    * Cadena destino =  altruistic
+    *
+    * */
     private Arbol arbol;
 
     @Override
