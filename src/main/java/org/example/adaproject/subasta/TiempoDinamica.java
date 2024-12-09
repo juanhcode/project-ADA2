@@ -83,7 +83,7 @@ public class TiempoDinamica {
             sumaTiempos += durationInSeconds;
 
             // Agregar tiempo al dataset para cada ejecución
-            dataset.addValue(durationInSeconds, caso, "Ejecución " + (i + 1));
+            dataset.addValue(durationInSeconds, caso, "" + (i + 1));
         }
 
         // Calcular el promedio de los tiempos

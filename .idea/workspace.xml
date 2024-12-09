@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa822252-410a-4b46-adce-3364299eaf13" name="Changes" comment="Feat: graficas">
+    <list default="true" id="aa822252-410a-4b46-adce-3364299eaf13" name="Changes" comment="Feat: configuraciones">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/adaproject/TerminalGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/adaproject/TerminalGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/adaproject/subasta/TiempoBruta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/adaproject/subasta/TiempoBruta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/adaproject/subasta/TiempoDinamica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/adaproject/subasta/TiempoDinamica.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/adaproject/terminal/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/adaproject/terminal/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/adaproject/terminal/TransformacionDinamica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/adaproject/terminal/TransformacionDinamica.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,70 +53,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Application.SubastaGUI.executor": "Run",
-    "Application.TerminalGUI.executor": "Run",
-    "Application.TiempoBruta.executor": "Run",
-    "Application.TiempoDinamica.executor": "Run",
-    "Application.TiempoVoraz.executor": "Run",
-    "Application.TransformacionDinamica.executor": "Run",
-    "Application.TransformadorVoraz.executor": "Run",
-    "Application.org.example.TransformacionDinamica.executor": "Run",
-    "Application.org.example.TransformadorVoraz.executor": "Run",
-    "Application.org.example.adaproject.subasta.TiempoVoraz.executor": "Run",
-    "Application.org.example.adaproject.terminal.Main.executor": "Run",
-    "Application.parte2.Main.executor": "Run",
-    "Application.prueba.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "devhoyos",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "/Users/juanhoyos/proyectos/pruebas/proyectoAda/src/main/java/org/example/Main.java",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "show.migrate.to.gradle.popup": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Dinamica.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SubastaGUI.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TerminalGUI.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TiempoBruta.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TiempoDinamica.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TiempoVoraz.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TransformacionDinamica.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TransformadorVoraz.executor&quot;: &quot;Run&quot;,
+    &quot;Application.org.example.TransformacionDinamica.executor&quot;: &quot;Run&quot;,
+    &quot;Application.org.example.TransformadorVoraz.executor&quot;: &quot;Run&quot;,
+    &quot;Application.org.example.adaproject.subasta.TiempoVoraz.executor&quot;: &quot;Run&quot;,
+    &quot;Application.org.example.adaproject.terminal.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.parte2.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.prueba.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;devhoyos&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/juanhoyos/proyectos/pruebas/proyectoAda/src/main/java/org/example/Main.java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Application.Dinamica">
-    <configuration name="Dinamica" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.adaproject.subasta.Dinamica" />
+}</component>
+  <component name="RunManager" selected="Application.org.example.adaproject.subasta.TiempoVoraz">
+    <configuration name="TiempoBruta" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.adaproject.subasta.TiempoBruta" />
       <module name="adaproject" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.adaproject.subasta.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SubastaGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.adaproject.SubastaGUI" />
-      <module name="adaproject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.adaproject.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TerminalGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.adaproject.TerminalGUI" />
-      <module name="adaproject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.adaproject.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -127,6 +105,32 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.adaproject.subasta.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TiempoVoraz" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.adaproject.terminal.TiempoVoraz" />
+      <module name="adaproject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.adaproject.terminal.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TransformacionDinamica" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.adaproject.terminal.TransformacionDinamica" />
+      <module name="adaproject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.adaproject.terminal.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -148,19 +152,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Dinamica" />
+      <item itemvalue="Application.TiempoBruta" />
+      <item itemvalue="Application.TiempoVoraz" />
+      <item itemvalue="Application.TransformacionDinamica" />
       <item itemvalue="Application.TiempoDinamica" />
       <item itemvalue="Application.org.example.adaproject.subasta.TiempoVoraz" />
-      <item itemvalue="Application.SubastaGUI" />
-      <item itemvalue="Application.TerminalGUI" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Dinamica" />
-        <item itemvalue="Application.SubastaGUI" />
-        <item itemvalue="Application.TerminalGUI" />
         <item itemvalue="Application.org.example.adaproject.subasta.TiempoVoraz" />
         <item itemvalue="Application.TiempoDinamica" />
+        <item itemvalue="Application.TiempoBruta" />
+        <item itemvalue="Application.TiempoVoraz" />
+        <item itemvalue="Application.TransformacionDinamica" />
       </list>
     </recent_temporary>
   </component>
@@ -213,7 +217,8 @@
       <workItem from="1733071694466" duration="2881000" />
       <workItem from="1733365723137" duration="6810000" />
       <workItem from="1733422371663" duration="36417000" />
-      <workItem from="1733612089137" duration="12370000" />
+      <workItem from="1733612089137" duration="35557000" />
+      <workItem from="1733716990542" duration="3060000" />
     </task>
     <task id="LOCAL-00001" summary="example">
       <option name="closed" value="true" />
@@ -367,7 +372,31 @@
       <option name="project" value="LOCAL" />
       <updated>1733619701266</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Feat: configuraciones">
+      <option name="closed" value="true" />
+      <created>1733632733066</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1733632733066</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Feat: configuraciones">
+      <option name="closed" value="true" />
+      <created>1733632740212</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1733632740212</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Feat: configuraciones">
+      <option name="closed" value="true" />
+      <created>1733632902654</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1733632902654</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -397,7 +426,8 @@
     <MESSAGE value="Feat: config in GUI terminal" />
     <MESSAGE value="Feat: config in GUI subasta" />
     <MESSAGE value="Feat: graficas" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat: graficas" />
+    <MESSAGE value="Feat: configuraciones" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat: configuraciones" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
