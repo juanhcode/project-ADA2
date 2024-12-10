@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa822252-410a-4b46-adce-3364299eaf13" name="Changes" comment="Feat: promedio">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/adaproject/subasta/TiempoBruta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/adaproject/subasta/TiempoBruta.java" afterDir="false" />
+    <list default="true" id="aa822252-410a-4b46-adce-3364299eaf13" name="Changes" comment="Feat: readme">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,39 +49,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Dinamica.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.SubastaGUI.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TerminalGUI.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TiempoBruta.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TiempoDinamica.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TiempoVoraz.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TransformacionDinamica.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TransformadorVoraz.executor&quot;: &quot;Run&quot;,
-    &quot;Application.org.example.TransformacionDinamica.executor&quot;: &quot;Run&quot;,
-    &quot;Application.org.example.TransformadorVoraz.executor&quot;: &quot;Run&quot;,
-    &quot;Application.org.example.adaproject.subasta.TiempoVoraz.executor&quot;: &quot;Run&quot;,
-    &quot;Application.org.example.adaproject.terminal.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.parte2.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.prueba.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;devhoyos&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/juanhoyos/proyectos/pruebas/proyectoAda/src/main/java/org/example/Main.java&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Dinamica.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.SubastaGUI.executor": "Run",
+    "Application.TerminalGUI.executor": "Run",
+    "Application.TiempoBruta.executor": "Run",
+    "Application.TiempoDinamica.executor": "Run",
+    "Application.TiempoVoraz.executor": "Run",
+    "Application.TransformacionDinamica.executor": "Run",
+    "Application.TransformadorVoraz.executor": "Run",
+    "Application.Voraz.executor": "Run",
+    "Application.org.example.TransformacionDinamica.executor": "Run",
+    "Application.org.example.TransformadorVoraz.executor": "Run",
+    "Application.org.example.adaproject.subasta.TiempoVoraz.executor": "Run",
+    "Application.org.example.adaproject.terminal.Main.executor": "Run",
+    "Application.parte2.Main.executor": "Run",
+    "Application.prueba.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "devhoyos",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "/Users/juanhoyos/proyectos/pruebas/proyectoAda/src/main/java/org/example/Main.java",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "show.migrate.to.gradle.popup": "false"
   }
-}</component>
-  <component name="RunManager" selected="Application.Voraz">
+}]]></component>
+  <component name="RunManager" selected="Application.Dinamica">
     <configuration name="Dinamica" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.adaproject.subasta.Dinamica" />
       <module name="adaproject" />
@@ -157,9 +157,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Dinamica" />
         <item itemvalue="Application.Voraz" />
         <item itemvalue="Application.TiempoBruta" />
-        <item itemvalue="Application.Dinamica" />
         <item itemvalue="Application.TiempoVoraz" />
         <item itemvalue="Application.TransformacionDinamica" />
       </list>
@@ -216,7 +216,7 @@
       <workItem from="1733422371663" duration="36417000" />
       <workItem from="1733612089137" duration="35557000" />
       <workItem from="1733716990542" duration="4183000" />
-      <workItem from="1733792116825" duration="5487000" />
+      <workItem from="1733792116825" duration="7233000" />
     </task>
     <task id="LOCAL-00001" summary="example">
       <option name="closed" value="true" />
@@ -402,7 +402,23 @@
       <option name="project" value="LOCAL" />
       <updated>1733722825346</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Feat: promedio">
+      <option name="closed" value="true" />
+      <created>1733798823037</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1733798823037</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Feat: readme">
+      <option name="closed" value="true" />
+      <created>1733798839287</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1733798839287</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -424,7 +440,6 @@
     <MESSAGE value="Feat: example" />
     <MESSAGE value="Feat: punto2" />
     <MESSAGE value="Feat: config" />
-    <MESSAGE value="Feat: readme" />
     <MESSAGE value="Feat: config in UI" />
     <MESSAGE value="Feat: config on transformacion" />
     <MESSAGE value="Feat: config in GUI" />
@@ -434,7 +449,8 @@
     <MESSAGE value="Feat: graficas" />
     <MESSAGE value="Feat: configuraciones" />
     <MESSAGE value="Feat: promedio" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat: promedio" />
+    <MESSAGE value="Feat: readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat: readme" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
