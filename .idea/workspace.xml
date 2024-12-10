@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa822252-410a-4b46-adce-3364299eaf13" name="Changes" comment="Feat: configuraciones">
+    <list default="true" id="aa822252-410a-4b46-adce-3364299eaf13" name="Changes" comment="Feat: promedio">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/adaproject/subasta/TiempoBruta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/adaproject/subasta/TiempoBruta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/adaproject/subasta/TiempoDinamica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/adaproject/subasta/TiempoDinamica.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/adaproject/terminal/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/adaproject/terminal/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/adaproject/terminal/TransformacionDinamica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/adaproject/terminal/TransformacionDinamica.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,9 +82,9 @@
     &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.org.example.adaproject.subasta.TiempoVoraz">
-    <configuration name="TiempoBruta" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.adaproject.subasta.TiempoBruta" />
+  <component name="RunManager" selected="Application.Voraz">
+    <configuration name="Dinamica" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.adaproject.subasta.Dinamica" />
       <module name="adaproject" />
       <extension name="coverage">
         <pattern>
@@ -99,8 +96,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TiempoDinamica" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.adaproject.subasta.TiempoDinamica" />
+    <configuration name="TiempoBruta" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.adaproject.subasta.TiempoBruta" />
       <module name="adaproject" />
       <extension name="coverage">
         <pattern>
@@ -138,8 +135,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="org.example.adaproject.subasta.TiempoVoraz" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.adaproject.subasta.TiempoVoraz" />
+    <configuration name="Voraz" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.adaproject.subasta.Voraz" />
       <module name="adaproject" />
       <extension name="coverage">
         <pattern>
@@ -152,17 +149,17 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Dinamica" />
+      <item itemvalue="Application.Voraz" />
       <item itemvalue="Application.TiempoBruta" />
       <item itemvalue="Application.TiempoVoraz" />
       <item itemvalue="Application.TransformacionDinamica" />
-      <item itemvalue="Application.TiempoDinamica" />
-      <item itemvalue="Application.org.example.adaproject.subasta.TiempoVoraz" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.org.example.adaproject.subasta.TiempoVoraz" />
-        <item itemvalue="Application.TiempoDinamica" />
+        <item itemvalue="Application.Voraz" />
         <item itemvalue="Application.TiempoBruta" />
+        <item itemvalue="Application.Dinamica" />
         <item itemvalue="Application.TiempoVoraz" />
         <item itemvalue="Application.TransformacionDinamica" />
       </list>
@@ -218,7 +215,8 @@
       <workItem from="1733365723137" duration="6810000" />
       <workItem from="1733422371663" duration="36417000" />
       <workItem from="1733612089137" duration="35557000" />
-      <workItem from="1733716990542" duration="3060000" />
+      <workItem from="1733716990542" duration="4183000" />
+      <workItem from="1733792116825" duration="5487000" />
     </task>
     <task id="LOCAL-00001" summary="example">
       <option name="closed" value="true" />
@@ -396,7 +394,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733632902654</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Feat: promedio">
+      <option name="closed" value="true" />
+      <created>1733722825346</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1733722825346</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -427,7 +433,8 @@
     <MESSAGE value="Feat: config in GUI subasta" />
     <MESSAGE value="Feat: graficas" />
     <MESSAGE value="Feat: configuraciones" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat: configuraciones" />
+    <MESSAGE value="Feat: promedio" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat: promedio" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
