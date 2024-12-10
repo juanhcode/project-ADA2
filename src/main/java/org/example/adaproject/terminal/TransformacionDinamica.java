@@ -12,8 +12,8 @@ import java.awt.*;
 public class TransformacionDinamica {
 
     public static void main(String[] args) {
-        String[] sources = {"abc", "abcdef", "algorithm", "longsourceword", "verylongsourcetext"};
-        String[] targets = {"cba", "fedcba", "altruistic", "longtargetword", "verylongtargettext"};
+        String[] sources = {"rescue", "earth", "francesa", "ingenioso", "algorithm"};
+        String[] targets = {"secure", "heart", "ancestro", "ingeniero", "altruistic"};
 
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 
@@ -21,38 +21,42 @@ public class TransformacionDinamica {
         int costoAvanzar = 1;
         int costoDelete = 2;
         int costoReplace = 3;
-        int costoInsert = 2;
-        int costoKill = 1;
+        int costoInsert = 4;
+        int costoKill = 5;
+
+        int ejecuciones = 50; // Número de ejecuciones por caso
 
         for (int caso = 0; caso < sources.length; caso++) {
             String source = sources[caso];
             String target = targets[caso];
 
-            int ejecuciones = 50;
             double[] tiempos = new double[ejecuciones];
             double sumaTiempos = 0;
 
             for (int i = 0; i < ejecuciones; i++) {
-                long startTime = System.nanoTime();
+                long startTime = System.nanoTime(); // Tiempo inicial
 
                 Nodo raiz = new Nodo(null, source, "", 0, 0, 0);
                 int[][] costos = calcularCostoMinimo(raiz, target, costoAvanzar, costoDelete, costoReplace, costoInsert, costoKill);
 
-                long endTime = System.nanoTime();
+                long endTime = System.nanoTime(); // Tiempo final
                 double durationInSeconds = (endTime - startTime) / 1_000_000_000.0;
                 tiempos[i] = durationInSeconds;
                 sumaTiempos += durationInSeconds;
+
+                // Agregar tiempo al dataset
+                dataset.addValue(durationInSeconds, "Caso " + (caso + 1), "" + (i + 1));
             }
 
-            // Agregar los tiempos de ejecución al dataset, con un color distinto por caso
-            for (int i = 0; i < tiempos.length; i++) {
-                dataset.addValue(tiempos[i], "Caso " + (caso + 1), "" + (i + 1));
-            }
+            // Calcular y mostrar el promedio para el caso
+            double promedio = sumaTiempos / ejecuciones;
+            System.out.println("Caso " + (caso + 1) + " - Promedio: " + promedio + " segundos");
         }
 
         // Generar la gráfica con los tiempos obtenidos
         crearGrafica(dataset);
     }
+
 
     public static void crearGrafica(DefaultCategoryDataset dataset) {
         JFreeChart lineChart = ChartFactory.createLineChart(
@@ -90,7 +94,6 @@ public class TransformacionDinamica {
                     int costoAvanzarActual = (source.charAt(i - 1) == target.charAt(j - 1))
                             ? costos[i - 1][j - 1] + costoAvanzar
                             : Integer.MAX_VALUE;
-
                     int costoReemplazarActual = costos[i - 1][j - 1] + costoReplace;
                     int costoInsertarActual = costos[i][j - 1] + costoInsert;
                     int costoBorrarActual = costos[i - 1][j] + costoDelete;
@@ -113,14 +116,27 @@ public class TransformacionDinamica {
         for (int i = 0; i <= n; i++) {
             for (int j = 0; j <= m; j++) {
                 if (i == 0) {
-                    dp[i][j] = j * insertar;
+                    dp[i][j] = j * insertar; // Costo de insertar caracteres para convertir cadena vacía en target
                 } else if (j == 0) {
-                    dp[i][j] = i * borrar;
+                    dp[i][j] = i * borrar; // Costo de borrar caracteres para convertir source en cadena vacía
                 } else {
-                    int costoReemplazo = source.charAt(i - 1) == target.charAt(j - 1) ? 0 : reemplazar;
-                    dp[i][j] = Math.min(dp[i - 1][j] + borrar,
-                            Math.min(dp[i][j - 1] + insertar,
-                                    dp[i - 1][j - 1] + costoReemplazo));
+                    // Costo de avanzar si los caracteres coinciden
+                    int costoAvanzar = source.charAt(i - 1) == target.charAt(j - 1) ? dp[i - 1][j - 1] + avanzar : Integer.MAX_VALUE;
+
+                    // Costo de reemplazo (si los caracteres no coinciden)
+                    int costoReemplazo = dp[i - 1][j - 1] + reemplazar;
+
+                    // Costo de insertar un carácter
+                    int costoInsertar = dp[i][j - 1] + insertar;
+
+                    // Costo de borrar un carácter
+                    int costoBorrar = dp[i - 1][j] + borrar;
+
+                    // Costo de eliminar todos los caracteres restantes
+                    int costoEliminar = dp[i - 1][j] + eliminar;
+
+                    // Determinar el costo mínimo entre todas las operaciones posibles
+                    dp[i][j] = Math.min(Math.min(costoAvanzar, costoReemplazo), Math.min(costoInsertar, Math.min(costoBorrar, costoEliminar)));
                 }
             }
         }
@@ -128,5 +144,6 @@ public class TransformacionDinamica {
         String resultado = "Costo mínimo para transformar '" + source + "' en '" + target + "' es: " + dp[n][m];
         return new ResultadoDinamica(resultado, dp);
     }
+
 
 }

@@ -12,8 +12,8 @@ import java.awt.*;
 public class Main {
     public static void main(String[] args) {
         // Definimos los casos de prueba
-        String[] iniciales = {"rescue", "abcdef", "hola", "hola", "hola"};
-        String[] destinos = {"secure", "fedcba", "hola", "hola", "hola"};
+        String[] iniciales = {"rescue", "earth", "francesa", "ingenioso", "algorithm"};
+        String[] destinos = {"secure", "heart", "ancestro", "ingeniero", "altruistic"};
 
         // Número de ejecuciones por caso
         int ejecuciones = 50;

@@ -74,7 +74,7 @@ public class TiempoBruta {
             sumaTiempos += durationInSeconds;
 
             // Agregar tiempo al dataset para cada ejecución
-            dataset.addValue(durationInSeconds, casoNombre, "Ejecución " + (i + 1));
+            dataset.addValue(durationInSeconds, casoNombre, "" + (i + 1));
         }
 
         // Calcular el promedio de los tiempos

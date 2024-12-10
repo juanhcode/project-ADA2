@@ -48,10 +48,14 @@ public class SubastaGUI extends Application {
         CheckBox checkBoxBruta = new CheckBox("Bruta");
         checkBoxBruta.setStyle("-fx-font-size: 16px; -fx-text-fill: white;");
 
-
+        TextField acciones = new TextField();
+        acciones.setPromptText("Acciones");
+        acciones.setStyle("-fx-font-size: 16px;");
+        acciones.setMinWidth(80);
+        acciones.setMaxWidth(150);
 
         // Contenedor para los CheckBox
-        HBox hBoxCheckBoxes = new HBox(20, checkBoxDinamica, checkBoxVoraz, checkBoxBruta);
+        HBox hBoxCheckBoxes = new HBox(20, checkBoxDinamica, checkBoxVoraz, checkBoxBruta, acciones);
         hBoxCheckBoxes.setPadding(new Insets(10));
         hBoxCheckBoxes.setStyle("-fx-alignment: center;");
 
@@ -161,7 +165,7 @@ public class SubastaGUI extends Application {
         botonEjecutar.setOnAction(event -> {
             try {
                 // Número total de acciones (puedes cambiar este valor si es configurable)
-                int A = 200;
+                int A = Integer.parseInt(acciones.getText());
 
                 // Crear la lista de Tripletas a partir de los campos ingresados por el usuario
                 List<Tripleta> tripletaList = new ArrayList<>();
@@ -335,6 +339,7 @@ public class SubastaGUI extends Application {
             agregarOferente.run();
             agregarOferente.run();
             textAreaInfo.clear();
+            acciones.clear();
         });
 
         // Crear layout principal

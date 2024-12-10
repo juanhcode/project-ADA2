@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa822252-410a-4b46-adce-3364299eaf13" name="Changes" comment="Feat: config in GUI subasta">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/adaproject/subasta/TiempoBruta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/adaproject/subasta/TiempoDinamica.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/adaproject/subasta/TiempoVoraz.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/adaproject/terminal/TiempoVoraz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/adaproject/terminal/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/adaproject/terminal/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/adaproject/terminal/TransformacionDinamica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/adaproject/terminal/TransformacionDinamica.java" afterDir="false" />
+    <list default="true" id="aa822252-410a-4b46-adce-3364299eaf13" name="Changes" comment="Feat: readme">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +51,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Dinamica.executor": "Run",
     "Application.Main.executor": "Run",
     "Application.SubastaGUI.executor": "Run",
     "Application.TerminalGUI.executor": "Run",
@@ -65,6 +60,7 @@
     "Application.TiempoVoraz.executor": "Run",
     "Application.TransformacionDinamica.executor": "Run",
     "Application.TransformadorVoraz.executor": "Run",
+    "Application.Voraz.executor": "Run",
     "Application.org.example.TransformacionDinamica.executor": "Run",
     "Application.org.example.TransformadorVoraz.executor": "Run",
     "Application.org.example.adaproject.subasta.TiempoVoraz.executor": "Run",
@@ -86,7 +82,20 @@
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.org.example.adaproject.subasta.TiempoVoraz">
+  <component name="RunManager" selected="Application.Dinamica">
+    <configuration name="Dinamica" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.adaproject.subasta.Dinamica" />
+      <module name="adaproject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.adaproject.subasta.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TiempoBruta" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.adaproject.subasta.TiempoBruta" />
       <module name="adaproject" />
@@ -100,12 +109,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TiempoDinamica" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.adaproject.subasta.TiempoDinamica" />
+    <configuration name="TiempoVoraz" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.adaproject.terminal.TiempoVoraz" />
       <module name="adaproject" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.adaproject.subasta.*" />
+          <option name="PATTERN" value="org.example.adaproject.terminal.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -114,8 +123,6 @@
       </method>
     </configuration>
     <configuration name="TransformacionDinamica" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="17" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="org.example.adaproject.terminal.TransformacionDinamica" />
       <module name="adaproject" />
       <extension name="coverage">
@@ -128,8 +135,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="org.example.adaproject.subasta.TiempoVoraz" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.adaproject.subasta.TiempoVoraz" />
+    <configuration name="Voraz" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.adaproject.subasta.Voraz" />
       <module name="adaproject" />
       <extension name="coverage">
         <pattern>
@@ -141,34 +148,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="org.example.adaproject.terminal.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="17" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="org.example.adaproject.terminal.Main" />
-      <module name="adaproject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.adaproject.terminal.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
+      <item itemvalue="Application.Dinamica" />
+      <item itemvalue="Application.Voraz" />
       <item itemvalue="Application.TiempoBruta" />
-      <item itemvalue="Application.TiempoDinamica" />
-      <item itemvalue="Application.org.example.adaproject.subasta.TiempoVoraz" />
+      <item itemvalue="Application.TiempoVoraz" />
       <item itemvalue="Application.TransformacionDinamica" />
-      <item itemvalue="Application.org.example.adaproject.terminal.Main" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.org.example.adaproject.subasta.TiempoVoraz" />
-        <item itemvalue="Application.TiempoDinamica" />
+        <item itemvalue="Application.Dinamica" />
+        <item itemvalue="Application.Voraz" />
         <item itemvalue="Application.TiempoBruta" />
-        <item itemvalue="Application.org.example.adaproject.terminal.Main" />
+        <item itemvalue="Application.TiempoVoraz" />
         <item itemvalue="Application.TransformacionDinamica" />
       </list>
     </recent_temporary>
@@ -222,7 +214,9 @@
       <workItem from="1733071694466" duration="2881000" />
       <workItem from="1733365723137" duration="6810000" />
       <workItem from="1733422371663" duration="36417000" />
-      <workItem from="1733612089137" duration="3962000" />
+      <workItem from="1733612089137" duration="35557000" />
+      <workItem from="1733716990542" duration="4183000" />
+      <workItem from="1733792116825" duration="7233000" />
     </task>
     <task id="LOCAL-00001" summary="example">
       <option name="closed" value="true" />
@@ -368,7 +362,63 @@
       <option name="project" value="LOCAL" />
       <updated>1733607686156</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Feat: graficas">
+      <option name="closed" value="true" />
+      <created>1733619701266</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1733619701266</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Feat: configuraciones">
+      <option name="closed" value="true" />
+      <created>1733632733066</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1733632733066</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Feat: configuraciones">
+      <option name="closed" value="true" />
+      <created>1733632740212</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1733632740212</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Feat: configuraciones">
+      <option name="closed" value="true" />
+      <created>1733632902654</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1733632902654</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Feat: promedio">
+      <option name="closed" value="true" />
+      <created>1733722825346</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1733722825346</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Feat: promedio">
+      <option name="closed" value="true" />
+      <created>1733798823037</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1733798823037</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Feat: readme">
+      <option name="closed" value="true" />
+      <created>1733798839287</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1733798839287</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -390,14 +440,17 @@
     <MESSAGE value="Feat: example" />
     <MESSAGE value="Feat: punto2" />
     <MESSAGE value="Feat: config" />
-    <MESSAGE value="Feat: readme" />
     <MESSAGE value="Feat: config in UI" />
     <MESSAGE value="Feat: config on transformacion" />
     <MESSAGE value="Feat: config in GUI" />
     <MESSAGE value="Feat: config in GUI and checkbox" />
     <MESSAGE value="Feat: config in GUI terminal" />
     <MESSAGE value="Feat: config in GUI subasta" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat: config in GUI subasta" />
+    <MESSAGE value="Feat: graficas" />
+    <MESSAGE value="Feat: configuraciones" />
+    <MESSAGE value="Feat: promedio" />
+    <MESSAGE value="Feat: readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat: readme" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
